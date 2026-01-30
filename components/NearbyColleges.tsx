@@ -51,7 +51,7 @@ export default function NearbyColleges() {
           </h2>
           <div className="w-20 h-1 bg-muted-red mx-auto mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Perfectly located near Mumbai's premier educational institutions
+            Perfectly located near Mumbai&apos;s premier educational institutions
           </p>
         </motion.div>
 
