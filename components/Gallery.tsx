@@ -96,9 +96,9 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="relative overflow-hidden">
+    <section id="gallery" className="relative overflow-hidden w-full max-w-full">
       {/* Carousel Container - Full Section */}
-      <div className="relative group w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-beige-light">
+      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-beige-light">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
