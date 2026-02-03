@@ -37,12 +37,12 @@ export default function FloorPlan() {
             className="relative group"
           >
             {/* Main Image */}
-            <div className="relative w-full aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border-4 border-beige-light">
+            <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border-4 border-beige-light">
               <Image
                 src="/images/FloorPlan_pic.webp"
                 alt="Rahi Homes Floor Plan"
                 fill
-                className="object-contain p-4"
+                className="object-contain p-2 sm:p-4"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               />
 
@@ -52,9 +52,9 @@ export default function FloorPlan() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileHover={{ scale: 1.1 }}
                   onClick={() => setIsModalOpen(true)}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-md p-4 rounded-full shadow-lg hover:bg-white"
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-md p-3 sm:p-4 rounded-full shadow-lg hover:bg-white"
                 >
-                  <ZoomIn className="w-8 h-8 text-gray-800" />
+                  <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8 text-gray-800" />
                 </motion.button>
               </div>
             </div>
@@ -64,21 +64,21 @@ export default function FloorPlan() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex justify-center gap-4 mt-8"
+              className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 sm:mt-8"
             >
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="flex items-center gap-2 px-6 py-3 bg-muted-red text-white rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl"
+                className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-muted-red text-white rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
-                <ZoomIn className="w-5 h-5" />
+                <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5" />
                 View Full Size
               </button>
               <a
                 href="/images/FloorPlan_pic.webp"
                 download="Rahi_Homes_Floor_Plan.webp"
-                className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors shadow-lg hover:shadow-xl"
+                className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
-                <Download className="w-5 h-5" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 Download
               </a>
             </motion.div>

@@ -98,7 +98,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="relative overflow-hidden">
       {/* Carousel Container - Full Section */}
-      <div className="relative group w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-beige-light">
+      <div className="relative group w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-beige-light">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -126,8 +126,8 @@ export default function Gallery() {
 
             {/* Minimal Overlay for Zoom Hint */}
             <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-white/30 backdrop-blur-md p-3 rounded-full text-white scale-75 group-hover:scale-100 transition-transform duration-300">
-                <ZoomIn className="w-6 h-6" />
+              <div className="bg-white/30 backdrop-blur-md p-2 sm:p-3 rounded-full text-white scale-75 group-hover:scale-100 transition-transform duration-300">
+                <ZoomIn className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
           </motion.div>
@@ -138,23 +138,23 @@ export default function Gallery() {
           onClick={() => {
             prevSlide()
           }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 group-hover:opacity-100 md:opacity-0 transition-opacity"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           aria-label="Previous image"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
         <button
           onClick={() => {
             nextSlide()
           }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 group-hover:opacity-100 md:opacity-0 transition-opacity"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           aria-label="Next image"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         {/* Indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center gap-3 z-10">
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex justify-center gap-2 sm:gap-3 z-10">
           {galleryImages.map((_, idx) => (
             <button
               key={idx}
@@ -162,8 +162,10 @@ export default function Gallery() {
                 setDirection(idx > currentIndex ? 1 : -1)
                 setCurrentIndex(idx)
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === currentIndex ? 'bg-muted-red w-8' : 'bg-white/60 w-2 hover:bg-white'
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                idx === currentIndex
+                  ? 'bg-muted-red w-6 sm:w-8'
+                  : 'bg-white/60 w-1.5 sm:w-2 hover:bg-white'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

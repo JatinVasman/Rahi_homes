@@ -10,15 +10,15 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-white">
+    <section id="about" className="py-16 sm:py-20 lg:py-32 bg-beige-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Image Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative h-[300px] sm:h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
               src="/images/2_bed_Room_pic1.webp"
@@ -41,10 +41,10 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                 About Rahi Homes
               </h2>
-              <div className="w-20 h-1 bg-muted-red mb-8" />
+              <div className="w-20 h-1 bg-muted-red mb-6 sm:mb-8" />
             </motion.div>
 
             <motion.div

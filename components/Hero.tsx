@@ -26,11 +26,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-2 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 leading-tight">
             <span className="inline-block">
-              <span className="relative">
+              <span className="relative pb-1">
                 Rahi
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-muted-red"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 sm:h-1 bg-muted-red"></span>
               </span>
             </span>{' '}
             Homes
