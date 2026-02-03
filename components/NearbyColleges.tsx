@@ -88,11 +88,7 @@ export default function NearbyColleges() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 text-center"
-        >
-          <p className="text-lg text-gray-700 font-medium">
-            ✨ Ideal location for students – save time on commute and focus on what matters most
-          </p>
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   )

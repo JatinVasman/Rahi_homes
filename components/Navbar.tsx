@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -52,9 +53,22 @@ export default function Navbar() {
           >
             <button
               onClick={() => scrollToSection('#home')}
-              className="text-2xl font-playfair font-bold text-muted-red hover:opacity-80 transition-opacity"
+              className="flex items-center hover:opacity-80 transition-all duration-300"
             >
-              Rahi Homes
+              <div
+                className={`rounded-md px-2 py-1.5 transition-all duration-300 ${
+                  isScrolled ? 'bg-transparent' : 'bg-white shadow-md'
+                }`}
+              >
+                <Image
+                  src="/images/rahi_home_Logo.png"
+                  alt="Rahi Homes Logo"
+                  width={150}
+                  height={60}
+                  className="h-11 w-auto object-contain"
+                  priority
+                />
+              </div>
             </button>
           </motion.div>
 

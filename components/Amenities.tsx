@@ -119,12 +119,8 @@ export default function Amenities() {
                 <div className="bg-white rounded-full w-14 h-14 flex items-center justify-center mb-4 group-hover:bg-muted-red transition-colors duration-300">
                   <Icon className="w-7 h-7 text-muted-red group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {amenity.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {amenity.description}
-                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{amenity.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{amenity.description}</p>
               </motion.div>
             )
           })}

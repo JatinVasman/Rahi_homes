@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
   const scrollToSection = (href: string) => {
@@ -17,9 +18,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-playfair font-bold text-muted-red mb-4">
-              Rahi Homes
-            </h3>
+            <div className="mb-4">
+              <Image
+                src="/images/rahi_home_Logo.png"
+                alt="Rahi Homes Logo"
+                width={180}
+                height={75}
+                className="h-16 w-auto object-contain"
+              />
+            </div>
             <p className="text-gray-400 leading-relaxed">
               Premium girls hostel in Vile Parle, Mumbai. Where comfort meets community.
             </p>
@@ -57,14 +64,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:rahi.homes56@gmail.com" className="hover:text-muted-red transition-colors">
+                <a
+                  href="mailto:rahi.homes56@gmail.com"
+                  className="hover:text-muted-red transition-colors"
+                >
                   rahi.homes56@gmail.com
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://instagram.com/rahi.homes" 
-                  target="_blank" 
+                <a
+                  href="https://instagram.com/rahi.homes"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-muted-red transition-colors"
                 >
@@ -81,7 +91,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Rahi Homes. All rights reserved.
             </p>
-            <motion.p 
+            <motion.p
               className="text-gray-400 text-sm flex items-center space-x-1"
               whileHover={{ scale: 1.05 }}
             >

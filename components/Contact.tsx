@@ -10,13 +10,13 @@ import toast from 'react-hot-toast'
 export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
-  
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     message: '',
   })
-  
+
   const [errors, setErrors] = useState({
     name: '',
     phone: '',
@@ -29,7 +29,7 @@ export default function Contact() {
       phone: '',
       message: '',
     }
-    
+
     let isValid = true
 
     // Name validation
@@ -66,11 +66,11 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (validateForm()) {
       // Success toast
       toast.success('Thank you! We will contact you soon.')
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -89,15 +89,15 @@ export default function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
     // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
-      setErrors(prev => ({ ...prev, [name]: '' }))
+      setErrors((prev) => ({ ...prev, [name]: '' }))
     }
   }
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-white">
+    <section id="contact" className="py-20 lg:py-32 bg-gradient-to-b from-beige-light to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -106,12 +106,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Get In Touch
-          </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
           <div className="w-20 h-1 bg-muted-red mx-auto mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll
+            respond as soon as possible.
           </p>
         </motion.div>
 
@@ -124,9 +123,7 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
               <p className="text-gray-600 mb-8">
                 Reach out to us through any of the following channels. We&apos;re here to help!
               </p>
@@ -139,10 +136,16 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Phone</h4>
-                <a href="tel:+919821327143" className="text-gray-700 hover:text-muted-red transition-colors block">
+                <a
+                  href="tel:+919821327143"
+                  className="text-gray-700 hover:text-muted-red transition-colors block"
+                >
                   +91 9821327143
                 </a>
-                <a href="tel:+918104071032" className="text-gray-700 hover:text-muted-red transition-colors block">
+                <a
+                  href="tel:+918104071032"
+                  className="text-gray-700 hover:text-muted-red transition-colors block"
+                >
                   +91 8104071032
                 </a>
               </div>
@@ -155,7 +158,10 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Email</h4>
-                <a href="mailto:rahi.homes56@gmail.com" className="text-gray-700 hover:text-muted-red transition-colors">
+                <a
+                  href="mailto:rahi.homes56@gmail.com"
+                  className="text-gray-700 hover:text-muted-red transition-colors"
+                >
                   rahi.homes56@gmail.com
                 </a>
               </div>
@@ -168,9 +174,9 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Instagram</h4>
-                <a 
-                  href="https://instagram.com/rahi.homes" 
-                  target="_blank" 
+                <a
+                  href="https://instagram.com/rahi.homes"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-muted-red transition-colors"
                 >
@@ -202,9 +208,7 @@ export default function Contact() {
                   } focus:ring-2 focus:ring-muted-red focus:border-transparent transition-all outline-none`}
                   placeholder="Enter your full name"
                 />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-red-500">{errors.name}</p>
-                )}
+                {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
               </div>
 
               <div>
@@ -222,9 +226,7 @@ export default function Contact() {
                   } focus:ring-2 focus:ring-muted-red focus:border-transparent transition-all outline-none`}
                   placeholder="Enter your 10-digit mobile number"
                 />
-                {errors.phone && (
-                  <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
-                )}
+                {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
               </div>
 
               <div>
@@ -242,9 +244,7 @@ export default function Contact() {
                   } focus:ring-2 focus:ring-muted-red focus:border-transparent transition-all outline-none resize-none`}
                   placeholder="Tell us about your requirements..."
                 />
-                {errors.message && (
-                  <p className="mt-1 text-sm text-red-500">{errors.message}</p>
-                )}
+                {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
               </div>
 
               <button

@@ -10,7 +10,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-beige-light">
+    <section id="about" className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image Column */}
@@ -21,8 +21,8 @@ export default function About() {
             className="relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=2069"
-              alt="Rahi Homes Interior"
+              src="/images/2_bed_Room_pic1.webp"
+              alt="Rahi Homes Interior - 2 Bed Room"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -54,29 +54,30 @@ export default function About() {
               className="space-y-6 text-gray-700 text-lg leading-relaxed"
             >
               <p>
-                Welcome to <span className="font-semibold text-muted-red">Rahi Homes</span>, 
-                a premium girls hostel nestled in the heart of{' '}
-                <span className="font-semibold">Vile Parle, Mumbai</span>, conveniently located 
+                Welcome to <span className="font-semibold text-muted-red">Rahi Homes</span>, a
+                premium girls hostel nestled in the heart of{' '}
+                <span className="font-semibold">Vile Parle, Mumbai</span>, conveniently located
                 opposite the prestigious <span className="font-semibold">DJ Sanghvi College</span>.
               </p>
 
               <p>
-                Our thoughtfully designed <span className="font-semibold">3-floor property</span> offers 
-                comfortable accommodation options including <span className="font-semibold">2, 3, and 4-sharing rooms</span>, 
-                each crafted to provide the perfect balance of privacy and community living.
+                Our thoughtfully designed <span className="font-semibold">3-floor property</span>{' '}
+                offers comfortable accommodation options including{' '}
+                <span className="font-semibold">2, 3, and 4-sharing rooms</span>, each crafted to
+                provide the perfect balance of privacy and community living.
               </p>
 
               <p>
-                Every room features <span className="font-semibold">well-ventilated spaces</span> with 
-                dedicated study desks for your academic pursuits, spacious wardrobes for your belongings, 
-                and modern bathrooms designed for your comfort and convenience.
+                Every room features <span className="font-semibold">well-ventilated spaces</span>{' '}
+                with dedicated study desks for your academic pursuits, spacious wardrobes for your
+                belongings, and modern bathrooms designed for your comfort and convenience.
               </p>
 
               <p>
-                At Rahi Homes, we believe in creating more than just a place to stay – we foster a 
-                warm, <span className="font-semibold">community-focused environment</span> where young 
-                women can thrive, form lasting friendships, and feel truly at home while pursuing 
-                their dreams in Mumbai.
+                At Rahi Homes, we believe in creating more than just a place to stay – we foster a
+                warm, <span className="font-semibold">community-focused environment</span> where
+                young women can thrive, form lasting friendships, and feel truly at home while
+                pursuing their dreams in Mumbai.
               </p>
             </motion.div>
 
