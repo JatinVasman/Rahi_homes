@@ -8,27 +8,27 @@ import { GraduationCap, MapPin } from 'lucide-react'
 const colleges = [
   {
     name: 'DJ Sanghvi College of Engineering',
-    distance: 'Right Opposite',
+    distance: '100m',
   },
   {
     name: 'Narsee Monjee College of Commerce and Economics',
-    distance: '1.2 km',
+    distance: '400m',
   },
   {
     name: 'Mukesh Patel School of Technology Management & Engineering',
-    distance: '1.5 km',
+    distance: '250m',
   },
   {
     name: 'Bhagubhai Mafatlal Polytechnic & College of Engineering',
-    distance: '2.1 km',
+    distance: '400m',
   },
   {
     name: 'NMIMS',
-    distance: '2.5 km',
+    distance: '500m',
   },
   {
     name: 'Mithibai College of Arts',
-    distance: '1.8 km',
+    distance: '600m',
   },
 ]
 

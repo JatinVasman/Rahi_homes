@@ -18,9 +18,14 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Rahi Homes - Premium Girls Hostel in Vile Parle, Mumbai',
-  description: 'Premium girls hostel in the heart of Vile Parle, Mumbai. Safe, stylish, and thoughtfully designed living spaces opposite DJ Sanghvi College. Offering 2, 3, and 4-sharing rooms with modern amenities.',
-  keywords: 'girls hostel, Vile Parle, Mumbai, DJ Sanghvi, premium accommodation, safe living, student housing',
+  description:
+    'Premium girls hostel in the heart of Vile Parle, Mumbai. Safe, stylish, and thoughtfully designed living spaces opposite DJ Sanghvi College. Offering 2, 3, and 4-sharing rooms with modern amenities.',
+  keywords:
+    'girls hostel, Vile Parle, Mumbai, DJ Sanghvi, premium accommodation, safe living, student housing',
   authors: [{ name: 'Rahi Homes' }],
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'Rahi Homes - Premium Girls Hostel in Vile Parle',
     description: 'Where Comfort Meets Community. Premium girls hostel opposite DJ Sanghvi College.',
@@ -29,16 +34,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
       <body>
         {children}
-        <Toaster 
+        <Toaster
           position="top-center"
           toastOptions={{
             duration: 3000,
