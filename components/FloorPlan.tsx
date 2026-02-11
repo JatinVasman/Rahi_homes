@@ -6,13 +6,18 @@ import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { ZoomIn, X, Download } from 'lucide-react'
 
+/* ═══════════════════════════════════════════════════
+ * FLOOR PLAN — Enhanced with hover effects and
+ *              decorative styling
+ * ═══════════════════════════════════════════════════ */
+
 export default function FloorPlan() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <section id="floor-plan" className="py-20 lg:py-32 bg-white">
+    <section id="floor-plan" className="py-20 lg:py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref}>
           {/* Section Header */}
@@ -22,8 +27,34 @@ export default function FloorPlan() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Floor Plan</h2>
-            <div className="w-20 h-1 bg-muted-red mx-auto mb-6" />
+            <div className="relative inline-block">
+              <motion.div
+                className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(ellipse at center, rgba(183, 110, 121, 0.35) 0%, rgba(232, 213, 242, 0.25) 40%, transparent 70%)',
+                }}
+                animate={{
+                  scale: [1, 1.4, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+              <p className="relative font-dancing text-xl sm:text-2xl text-rose-gold mb-3">
+                Thoughtfully Designed
+              </p>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-shadow-soft">
+              Floor Plan
+            </h2>
+            <div
+              className="w-20 h-1 mx-auto mb-6"
+              style={{ background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)' }}
+            />
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Explore the thoughtfully designed layout of Rahi Homes
             </p>
@@ -36,8 +67,8 @@ export default function FloorPlan() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative group"
           >
-            {/* Main Image */}
-            <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border-4 border-beige-light">
+            {/* Main Image with card-glow */}
+            <div className="card-glow relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border-4 border-beige-light">
               <Image
                 src="/images/FloorPlan_pic.webp"
                 alt="Rahi Homes Floor Plan"
@@ -66,21 +97,25 @@ export default function FloorPlan() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 sm:mt-8"
             >
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setIsModalOpen(true)}
-                className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-muted-red text-white rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="btn-ripple flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-muted-red text-white rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5" />
                 View Full Size
-              </button>
-              <a
+              </motion.button>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="/images/FloorPlan_pic.webp"
                 download="Rahi_Homes_Floor_Plan.webp"
-                className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="btn-ripple flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 Download
-              </a>
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>
@@ -96,7 +131,7 @@ export default function FloorPlan() {
           onClick={() => setIsModalOpen(false)}
         >
           <button
-            className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-50 bg-black/50 p-3 rounded-full"
+            className="absolute top-6 right-6 text-white hover:text-rose-gold transition-colors z-50 bg-black/50 p-3 rounded-full"
             onClick={() => setIsModalOpen(false)}
           >
             <X className="w-8 h-8" />

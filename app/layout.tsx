@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display, Poppins } from 'next/font/google'
+import { Playfair_Display, Poppins, Dancing_Script } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 const playfair = Playfair_Display({
@@ -13,6 +13,14 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
+  display: 'swap',
+})
+
+/* ✨ Decorative font for section subtitles, quotes, and special callouts */
+const dancing = Dancing_Script({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-dancing',
   display: 'swap',
 })
 
@@ -36,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${poppins.variable} ${dancing.variable}`}>
       <body>
         {children}
         <Toaster

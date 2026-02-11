@@ -4,6 +4,11 @@ import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import Image from 'next/image'
 
+/* ═══════════════════════════════════════════════════
+ * FOOTER — Enhanced with gradient, hover effects, and
+ *          decorative elements
+ * ═══════════════════════════════════════════════════ */
+
 export default function Footer() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -13,11 +18,24 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-gray-900 text-white py-12 overflow-hidden">
+      {/* Subtle gradient accent at top */}
+      <div
+        className="absolute top-0 left-0 right-0 h-1"
+        style={{
+          background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0, #E8D5F2, #B23A3A)',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="mb-4">
               <Image
                 src="/images/rahi_home_Logo.png"
@@ -30,43 +48,59 @@ export default function Footer() {
             <p className="text-gray-400 leading-relaxed">
               Premium girls hostel in Vile Parle, Mumbai. Where comfort meets community.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {['Home', 'About', 'Amenities', 'Colleges', 'Location', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(`#${item.toLowerCase()}`)}
-                    className="text-gray-400 hover:text-muted-red transition-colors"
+                    className="nav-link-hover text-gray-400 hover:text-rose-gold transition-colors duration-300"
                   >
                     {item}
                   </button>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="tel:+919821327143" className="hover:text-muted-red transition-colors">
+                <a
+                  href="tel:+919821327143"
+                  className="hover:text-rose-gold transition-colors duration-300"
+                >
                   +91 9821327143
                 </a>
               </li>
               <li>
-                <a href="tel:+918104071032" className="hover:text-muted-red transition-colors">
+                <a
+                  href="tel:+918104071032"
+                  className="hover:text-rose-gold transition-colors duration-300"
+                >
                   +91 8104071032
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:rahi.homes56@gmail.com"
-                  className="hover:text-muted-red transition-colors"
+                  className="hover:text-rose-gold transition-colors duration-300"
                 >
                   rahi.homes56@gmail.com
                 </a>
@@ -76,17 +110,20 @@ export default function Footer() {
                   href="https://instagram.com/rahi.homes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-muted-red transition-colors"
+                  className="hover:text-rose-gold transition-colors duration-300"
                 >
                   @Rahi.homes
                 </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
+        {/* Bottom Bar with gradient divider */}
+        <div className="pt-8 border-t border-gray-800 relative">
+          {/* Gradient glow on divider */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-rose-gold/40 to-transparent" />
+
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Rahi Homes. All rights reserved.
@@ -96,7 +133,12 @@ export default function Footer() {
               whileHover={{ scale: 1.05 }}
             >
               <span>Made with</span>
-              <Heart className="w-4 h-4 text-muted-red fill-current" />
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <Heart className="w-4 h-4 text-rose-gold fill-current" />
+              </motion.span>
               <span>for our residents</span>
             </motion.p>
           </div>

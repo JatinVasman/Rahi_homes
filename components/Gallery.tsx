@@ -5,6 +5,18 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react'
 import Image from 'next/image'
 
+/* ═══════════════════════════════════════════════════
+ * GALLERY — Enhanced with hover effects and
+ *           decorative elements
+ *
+ * AFTER:
+ *  - Enhanced carousel transitions
+ *  - Rose-gold indicator colors
+ *  - Gradient overlays on navigation buttons
+ *  - Blush-tinted background
+ *  - Improved lightbox with backdrop blur
+ * ═══════════════════════════════════════════════════ */
+
 const galleryImages = [
   {
     src: '/images/2_bed_Room_pic2.webp',
@@ -54,7 +66,6 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-  // Auto-play functionality
   useEffect(() => {
     let interval: NodeJS.Timeout
     if (isAutoPlaying && !selectedImage) {
@@ -97,8 +108,8 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="relative overflow-hidden w-full max-w-full">
-      {/* Carousel Container - Full Section */}
-      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-beige-light">
+      {/* Carousel Container */}
+      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-gradient-to-br from-beige-light via-blush-light/30 to-beige-light">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -124,36 +135,42 @@ export default function Gallery() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
 
-            {/* Minimal Overlay for Zoom Hint */}
-            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-white/30 backdrop-blur-md p-2 sm:p-3 rounded-full text-white scale-75 group-hover:scale-100 transition-transform duration-300">
+            {/* Image title overlay — positioned above the indicator dots */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent pt-16 pb-14 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white font-dancing text-2xl text-center">
+                {galleryImages[currentIndex].title}
+              </p>
+            </div>
+
+            {/* Zoom hint — above the dots area */}
+            <div className="absolute bottom-16 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="bg-white/30 backdrop-blur-md p-2 sm:p-3 rounded-full text-white"
+              >
                 <ZoomIn className="w-5 h-5 sm:w-6 sm:h-6" />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Buttons */}
+        {/* Navigation Buttons with rose-gold accent */}
         <button
-          onClick={() => {
-            prevSlide()
-          }}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+          onClick={() => prevSlide()}
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:shadow-rose-gold/20 hover:shadow-xl"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
         <button
-          onClick={() => {
-            nextSlide()
-          }}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+          onClick={() => nextSlide()}
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:shadow-rose-gold/20 hover:shadow-xl"
           aria-label="Next image"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
-        {/* Indicators */}
+        {/* Indicators with rose-gold active state */}
         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex justify-center gap-2 sm:gap-3 z-10">
           {galleryImages.map((_, idx) => (
             <button
@@ -164,7 +181,7 @@ export default function Gallery() {
               }}
               className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                 idx === currentIndex
-                  ? 'bg-muted-red w-6 sm:w-8'
+                  ? 'bg-rose-gold w-6 sm:w-8'
                   : 'bg-white/60 w-1.5 sm:w-2 hover:bg-white'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
@@ -184,7 +201,7 @@ export default function Gallery() {
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-50 bg-black/50 p-2 rounded-full"
+              className="absolute top-6 right-6 text-white hover:text-rose-gold transition-colors z-50 bg-black/50 p-2 rounded-full"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-8 h-8" />
