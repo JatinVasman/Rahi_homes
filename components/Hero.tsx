@@ -53,7 +53,7 @@ export default function Hero() {
         />
         {/* Gradient overlay: softer with pink/lavender tint */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-gold/10 via-transparent to-lavender/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
       </motion.div>
 
       {/* ── Layer 3: Floating Hearts ──────────────────────────── */}
@@ -71,9 +71,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-dancing text-xl sm:text-2xl text-blush-dark mb-4 tracking-wide"
+          className="font-script text-2xl sm:text-3xl text-primary tracking-wider mb-4"
         >
-          ✦ Welcome to Your Dream Home ✦
+          Welcome to Your Dream Home
         </motion.p>
 
         {/* Main heading with gradient text effect and text shadow */}
@@ -94,7 +94,7 @@ export default function Hero() {
                 <motion.span
                   className="absolute bottom-0 left-0 w-full h-0.5 sm:h-1"
                   style={{
-                    background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)',
+                    background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)',
                   }}
                   initial={{ scaleX: 0, transformOrigin: 'left' }}
                   animate={{ scaleX: 1 }}
@@ -111,16 +111,6 @@ export default function Hero() {
             </motion.span>
           </h1>
         </motion.div>
-
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto font-light"
-        >
-          Premium Girls Hostel in the Heart of Vile Parle, Mumbai
-        </motion.p>
       </motion.div>
     </section>
   )

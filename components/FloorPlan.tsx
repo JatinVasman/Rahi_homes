@@ -32,7 +32,7 @@ export default function FloorPlan() {
                 className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(183, 110, 121, 0.35) 0%, rgba(232, 213, 242, 0.25) 40%, transparent 70%)',
+                    'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
                 }}
                 animate={{
                   scale: [1, 1.4, 1],
@@ -44,7 +44,7 @@ export default function FloorPlan() {
                   ease: 'easeInOut',
                 }}
               />
-              <p className="relative font-dancing text-xl sm:text-2xl text-rose-gold mb-3">
+              <p className="relative font-script text-2xl sm:text-3xl text-primary tracking-wider mb-3">
                 Thoughtfully Designed
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function FloorPlan() {
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)' }}
+              style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
             />
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Explore the thoughtfully designed layout of Rahi Homes
@@ -68,7 +68,7 @@ export default function FloorPlan() {
             className="relative group"
           >
             {/* Main Image with card-glow */}
-            <div className="card-glow relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border-4 border-beige-light">
+            <div className="card-glow relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border-4 border-soft">
               <Image
                 src="/images/FloorPlan_pic.webp"
                 alt="Rahi Homes Floor Plan"
@@ -101,7 +101,7 @@ export default function FloorPlan() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsModalOpen(true)}
-                className="btn-ripple flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-muted-red text-white rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="btn-ripple flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-white rounded-full hover:bg-deep transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5" />
                 View Full Size
@@ -131,7 +131,7 @@ export default function FloorPlan() {
           onClick={() => setIsModalOpen(false)}
         >
           <button
-            className="absolute top-6 right-6 text-white hover:text-rose-gold transition-colors z-50 bg-black/50 p-3 rounded-full"
+            className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-50 bg-black/50 p-3 rounded-full"
             onClick={() => setIsModalOpen(false)}
           >
             <X className="w-8 h-8" />

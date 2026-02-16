@@ -10,51 +10,42 @@ const config: Config = {
     extend: {
       /* ──────────────────────────────────────────────
        * COLOR PALETTE
-       * Original colors preserved; feminine accents added
+       * Soft pastel luxury feminine palette
        * ────────────────────────────────────────────── */
       colors: {
-        beige: {
-          light: '#F5F1EA',
-          DEFAULT: '#F5F1EA',
+        primary: {
+          light: '#FFD6E7',
+          DEFAULT: '#FF6FAE',
+          dark: '#D63384',
         },
-        muted: {
-          red: '#B23A3A',
+        secondary: {
+          light: '#E9D5FF',
+          DEFAULT: '#CDB4FF',
+          dark: '#A78BFA',
         },
-        brown: {
-          light: '#C8B8A8',
-          DEFAULT: '#8B7355',
+        accent: {
+          light: '#FFE8D6',
+          DEFAULT: '#F7D9C4',
+          dark: '#F0C4A8',
         },
-        /* ✨ New feminine accent colors */
-        blush: {
-          light: '#FFF0F0',
-          DEFAULT: '#FFE5E5',
-          dark: '#FFD1D1',
+        soft: {
+          light: '#FFF9FC',
+          DEFAULT: '#FFE9F3',
+          dark: '#FFD6E7',
         },
-        lavender: {
-          light: '#F3ECF9',
-          DEFAULT: '#E8D5F2',
-          dark: '#D4B8E8',
-        },
-        peach: {
-          light: '#FFD4C4',
-          DEFAULT: '#FFB5A0',
-          dark: '#FF9A80',
-        },
-        'rose-gold': {
-          light: '#D4958A',
-          DEFAULT: '#B76E79',
-          dark: '#9A5563',
-        },
+        background: '#FFF9FC',
+        deep: '#D63384',
       },
 
       /* ──────────────────────────────────────────────
        * FONTS
-       * Added Dancing Script for decorative accents
+       * Playfair Display (headings), Plus Jakarta Sans (body),
+       * Dancing Script (decorative subtitles)
        * ────────────────────────────────────────────── */
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],
-        poppins: ['var(--font-poppins)', 'sans-serif'],
-        dancing: ['var(--font-dancing)', 'cursive'],
+        jakarta: ['var(--font-jakarta)', 'sans-serif'],
+        script: ['var(--font-script)', 'cursive'],
       },
 
       /* ──────────────────────────────────────────────
@@ -75,13 +66,13 @@ const config: Config = {
           '90%': { opacity: '0.6' },
           '100%': { transform: 'translateY(-100vh) scale(1)', opacity: '0' },
         },
-        /* Pulsing glow effect for borders/shadows */
+        /* Pulsing glow effect for borders/shadows — subtle */
         'pulse-glow': {
           '0%, 100%': {
-            boxShadow: '0 0 8px rgba(183, 110, 121, 0.3)',
+            boxShadow: '0 0 6px rgba(255, 111, 174, 0.15)',
           },
           '50%': {
-            boxShadow: '0 0 20px rgba(183, 110, 121, 0.6)',
+            boxShadow: '0 0 14px rgba(255, 111, 174, 0.3)',
           },
         },
         /* Shimmer sweep for buttons */

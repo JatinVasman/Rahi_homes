@@ -109,7 +109,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="relative overflow-hidden w-full max-w-full">
       {/* Carousel Container */}
-      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-gradient-to-br from-beige-light via-blush-light/30 to-beige-light">
+      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-gradient-to-br from-white via-[#F8F4F8] to-white">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -137,7 +137,7 @@ export default function Gallery() {
 
             {/* Image title overlay — positioned above the indicator dots */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent pt-16 pb-14 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white font-dancing text-2xl text-center">
+              <p className="text-white font-script text-3xl text-center tracking-wider">
                 {galleryImages[currentIndex].title}
               </p>
             </div>
@@ -157,14 +157,14 @@ export default function Gallery() {
         {/* Navigation Buttons with rose-gold accent */}
         <button
           onClick={() => prevSlide()}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:shadow-rose-gold/20 hover:shadow-xl"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:shadow-primary/20 hover:shadow-xl"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
         <button
           onClick={() => nextSlide()}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:shadow-rose-gold/20 hover:shadow-xl"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-white text-gray-800 transition-all backdrop-blur-sm z-10 hover:scale-110 active:scale-95 opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:shadow-primary/20 hover:shadow-xl"
           aria-label="Next image"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -181,7 +181,7 @@ export default function Gallery() {
               }}
               className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                 idx === currentIndex
-                  ? 'bg-rose-gold w-6 sm:w-8'
+                  ? 'bg-primary w-6 sm:w-8'
                   : 'bg-white/60 w-1.5 sm:w-2 hover:bg-white'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
@@ -201,7 +201,7 @@ export default function Gallery() {
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-6 right-6 text-white hover:text-rose-gold transition-colors z-50 bg-black/50 p-2 rounded-full"
+              className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-50 bg-black/50 p-2 rounded-full"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-8 h-8" />

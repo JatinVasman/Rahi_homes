@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart } from 'lucide-react'
+import { Heart, Phone, Mail, Instagram } from 'lucide-react'
 import Image from 'next/image'
 
 /* ═══════════════════════════════════════════════════
@@ -18,12 +18,15 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-gray-900 text-white py-12 overflow-hidden">
+    <footer
+      className="relative text-white py-12 overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #3A0D2E 0%, #2A0A3A 50%, #1A0520 100%)' }}
+    >
       {/* Subtle gradient accent at top */}
       <div
         className="absolute top-0 left-0 right-0 h-1"
         style={{
-          background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0, #E8D5F2, #B23A3A)',
+          background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFE9F3, #D63384, #FF6FAE)',
         }}
       />
 
@@ -63,7 +66,7 @@ export default function Footer() {
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(`#${item.toLowerCase()}`)}
-                    className="nav-link-hover text-gray-400 hover:text-rose-gold transition-colors duration-300"
+                    className="nav-link-hover text-gray-400 hover:text-primary transition-colors duration-300"
                   >
                     {item}
                   </button>
@@ -72,7 +75,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info with Logo */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -80,28 +83,31 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-3 text-gray-400">
               <li>
                 <a
                   href="tel:+919821327143"
-                  className="hover:text-rose-gold transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
                 >
+                  <Phone className="w-4 h-4 text-primary/70 flex-shrink-0" />
                   +91 9821327143
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+918104071032"
-                  className="hover:text-rose-gold transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
                 >
+                  <Phone className="w-4 h-4 text-primary/70 flex-shrink-0" />
                   +91 8104071032
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:rahi.homes56@gmail.com"
-                  className="hover:text-rose-gold transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
                 >
+                  <Mail className="w-4 h-4 text-primary/70 flex-shrink-0" />
                   rahi.homes56@gmail.com
                 </a>
               </li>
@@ -110,8 +116,9 @@ export default function Footer() {
                   href="https://instagram.com/rahi.homes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-rose-gold transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
                 >
+                  <Instagram className="w-4 h-4 text-primary/70 flex-shrink-0" />
                   @Rahi.homes
                 </a>
               </li>
@@ -122,25 +129,12 @@ export default function Footer() {
         {/* Bottom Bar with gradient divider */}
         <div className="pt-8 border-t border-gray-800 relative">
           {/* Gradient glow on divider */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-rose-gold/40 to-transparent" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Rahi Homes. All rights reserved.
             </p>
-            <motion.p
-              className="text-gray-400 text-sm flex items-center space-x-1"
-              whileHover={{ scale: 1.05 }}
-            >
-              <span>Made with</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <Heart className="w-4 h-4 text-rose-gold fill-current" />
-              </motion.span>
-              <span>for our residents</span>
-            </motion.p>
           </div>
         </div>
       </div>

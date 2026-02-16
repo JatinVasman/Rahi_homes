@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display, Poppins, Dancing_Script } from 'next/font/google'
+import { Playfair_Display, Plus_Jakarta_Sans, Dancing_Script } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 const playfair = Playfair_Display({
@@ -9,18 +9,18 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-const poppins = Poppins({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
+  variable: '--font-jakarta',
   display: 'swap',
 })
 
-/* ✨ Decorative font for section subtitles, quotes, and special callouts */
-const dancing = Dancing_Script({
+/* ✨ Elegant script font for decorative subtitles and accent text */
+const script = Dancing_Script({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-dancing',
+  variable: '--font-script',
   display: 'swap',
 })
 
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${poppins.variable} ${dancing.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${script.variable}`}>
       <body>
         {children}
         <Toaster
@@ -52,13 +52,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           toastOptions={{
             duration: 3000,
             style: {
-              background: '#F5F1EA',
+              background: '#FFFFFF',
               color: '#1f2937',
-              fontFamily: 'var(--font-poppins)',
+              fontFamily: 'var(--font-jakarta)',
             },
             success: {
               iconTheme: {
-                primary: '#B23A3A',
+                primary: '#FF6FAE',
                 secondary: '#FFFFFF',
               },
             },

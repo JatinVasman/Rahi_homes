@@ -69,7 +69,7 @@ export default function NearbyColleges() {
   return (
     <section
       id="colleges"
-      className="py-20 lg:py-32 bg-gradient-to-b from-beige-light to-white relative overflow-hidden"
+      className="py-20 lg:py-32 bg-gradient-to-b from-[#F8F4F8] to-white relative overflow-hidden"
     >
       <CursorSpotlight className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,7 +87,7 @@ export default function NearbyColleges() {
                 className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(183, 110, 121, 0.35) 0%, rgba(232, 213, 242, 0.25) 40%, transparent 70%)',
+                    'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
                 }}
                 animate={{
                   scale: [1, 1.4, 1],
@@ -99,7 +99,7 @@ export default function NearbyColleges() {
                   ease: 'easeInOut',
                 }}
               />
-              <p className="relative font-dancing text-xl sm:text-2xl text-rose-gold mb-3">
+              <p className="relative font-script text-2xl sm:text-3xl text-primary tracking-wider mb-3">
                 Perfectly Located
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function NearbyColleges() {
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)' }}
+              style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Perfectly located near Mumbai&apos;s premier educational institutions
@@ -148,23 +148,23 @@ export default function NearbyColleges() {
                 className="card-glow bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group relative overflow-hidden"
               >
                 {/* Gradient overlay that appears on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blush/30 via-transparent to-lavender-light/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" />
 
                 <div className="flex items-start space-x-4 relative z-10">
                   {/* Icon with rose-gold transition on hover */}
                   <motion.div
-                    className="bg-muted-red/10 rounded-full p-3 flex-shrink-0 group-hover:bg-rose-gold/15 transition-colors duration-300"
+                    className="bg-primary/8 rounded-full p-3 flex-shrink-0 group-hover:bg-primary/12 transition-colors duration-300"
                     whileHover={{ rotate: [0, 5, -3, 0], scale: 1.05 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <GraduationCap className="w-6 h-6 text-muted-red group-hover:text-rose-gold transition-colors duration-300" />
+                    <GraduationCap className="w-6 h-6 text-primary group-hover:text-deep transition-colors duration-300" />
                   </motion.div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-snug group-hover:text-muted-red transition-colors duration-300">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-snug group-hover:text-deep transition-colors duration-300">
                       {college.name}
                     </h3>
                     <div className="flex items-center text-sm text-gray-600">
-                      <MapPin className="w-4 h-4 mr-1.5 text-muted-red group-hover:text-rose-gold transition-colors duration-300" />
+                      <MapPin className="w-4 h-4 mr-1.5 text-primary group-hover:text-deep transition-colors duration-300" />
                       <span className="font-medium">{college.distance}</span>
                     </div>
                   </div>

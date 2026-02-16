@@ -29,12 +29,12 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-16 sm:py-20 lg:py-32 bg-beige-light overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-20 lg:py-32 bg-white overflow-hidden">
       {/* Decorative blob backgrounds */}
       <OrganicBlobs />
 
       {/* Curved bottom divider */}
-      <CurvedDivider fromColor="#F5F1EA" toColor="#FFFFFF" />
+      <CurvedDivider fromColor="#FFFFFF" toColor="#FFFFFF" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -54,7 +54,7 @@ export default function About() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             {/* Rose-gold border glow on hover */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-rose-gold/30 rounded-2xl transition-colors duration-500" />
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/15 rounded-2xl transition-colors duration-500" />
           </motion.div>
 
           {/* Content Column */}
@@ -74,7 +74,7 @@ export default function About() {
                   className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                   style={{
                     background:
-                      'radial-gradient(ellipse at center, rgba(183, 110, 121, 0.35) 0%, rgba(232, 213, 242, 0.25) 40%, transparent 70%)',
+                      'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
                   }}
                   animate={{
                     scale: [1, 1.4, 1],
@@ -86,7 +86,7 @@ export default function About() {
                     ease: 'easeInOut',
                   }}
                 />
-                <p className="relative font-dancing text-xl sm:text-2xl text-rose-gold mb-3">
+                <p className="relative font-script text-2xl sm:text-3xl text-primary tracking-wider mb-3">
                   Your Home Away From Home
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function About() {
               </h2>
               <div
                 className="w-20 h-1 mb-6 sm:mb-8"
-                style={{ background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)' }}
+                style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
               />
             </motion.div>
 
@@ -106,8 +106,8 @@ export default function About() {
               className="space-y-6 text-gray-700 leading-relaxed"
             >
               <p>
-                Welcome to <span className="font-semibold text-muted-red">Rahi Homes</span>, a
-                premium girls hostel nestled in the heart of{' '}
+                Welcome to <span className="font-semibold text-primary">Rahi Homes</span>, a premium
+                girls hostel nestled in the heart of{' '}
                 <span className="font-semibold">Vile Parle, Mumbai</span>, conveniently located
                 opposite the prestigious <span className="font-semibold">DJ Sanghvi College</span>.
               </p>
@@ -151,7 +151,7 @@ export default function About() {
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   className="text-center group cursor-default"
                 >
-                  <div className="text-4xl font-bold text-muted-red mb-2 group-hover:text-rose-gold transition-colors duration-300">
+                  <div className="text-4xl font-bold text-primary mb-2 group-hover:text-deep transition-colors duration-300">
                     {stat.value}
                   </div>
                   <div className="text-sm text-gray-600">{stat.label}</div>

@@ -8,10 +8,12 @@ import Location from '@/components/Location'
 import FloorPlan from '@/components/FloorPlan'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import ContactPopup from '@/components/ContactPopup'
 
 export default function Home() {
   return (
     <main className="relative overflow-x-hidden">
+      <ContactPopup />
       <Navbar />
       <Hero />
       <About />

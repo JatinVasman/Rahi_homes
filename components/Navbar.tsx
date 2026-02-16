@@ -57,7 +57,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-rose-gold/5'
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-primary/5'
           : 'bg-gradient-to-b from-black/30 to-transparent'
       }`}
     >
@@ -70,7 +70,7 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 right-0 h-[2px]"
           style={{
             background:
-              'linear-gradient(90deg, transparent, #B76E79, #FFB5A0, #E8D5F2, transparent)',
+              'linear-gradient(90deg, transparent, #FF6FAE, #CDB4FF, #FFE9F3, transparent)',
           }}
         />
       )}
@@ -91,8 +91,8 @@ export default function Navbar() {
               <div
                 className={`rounded-lg px-2.5 py-1.5 transition-all duration-400 ${
                   isScrolled
-                    ? 'bg-transparent group-hover:bg-blush/20'
-                    : 'bg-white/95 shadow-lg shadow-black/10 group-hover:shadow-rose-gold/20 group-hover:shadow-xl'
+                    ? 'bg-transparent group-hover:bg-gray-50'
+                    : 'bg-white/95 shadow-lg shadow-black/10 group-hover:shadow-primary/20 group-hover:shadow-xl'
                 }`}
               >
                 <Image
@@ -121,8 +121,8 @@ export default function Navbar() {
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-150 rounded-lg ${
                     isScrolled
                       ? isActive
-                        ? 'text-muted-red'
-                        : 'text-gray-600 hover:text-muted-red hover:bg-blush/20'
+                        ? 'text-primary'
+                        : 'text-gray-600 hover:text-primary hover:bg-gray-50'
                       : isActive
                         ? 'text-white'
                         : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -137,7 +137,7 @@ export default function Navbar() {
                       className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full"
                       style={{
                         background: isScrolled
-                          ? 'linear-gradient(135deg, #B23A3A, #B76E79)'
+                          ? 'linear-gradient(135deg, #FF6FAE, #D63384)'
                           : 'white',
                       }}
                       transition={{
@@ -161,7 +161,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="relative ml-4 overflow-hidden text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-150 group"
               style={{
-                background: 'linear-gradient(135deg, #B23A3A, #B76E79, #c75050)',
+                background: 'linear-gradient(135deg, #FF6FAE, #D63384, #FF6FAE)',
               }}
             >
               {/* Shimmer overlay */}
@@ -180,7 +180,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.9 }}
               className={`p-2.5 rounded-xl transition-all duration-150 ${
                 isScrolled
-                  ? 'text-gray-700 hover:bg-blush/20 hover:text-muted-red'
+                  ? 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                   : 'text-white hover:bg-white/15 backdrop-blur-sm'
               }`}
             >
@@ -220,13 +220,13 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="md:hidden bg-white/95 backdrop-blur-2xl border-t border-rose-gold/10"
+            className="md:hidden bg-white/95 backdrop-blur-2xl border-t border-primary/10"
           >
             {/* Rose-gold gradient line at top */}
             <div
               className="h-[1px] w-full"
               style={{
-                background: 'linear-gradient(90deg, transparent, #B76E79, #FFB5A0, transparent)',
+                background: 'linear-gradient(90deg, transparent, #FF6FAE, #CDB4FF, transparent)',
               }}
             />
 
@@ -242,8 +242,8 @@ export default function Navbar() {
                     onClick={() => scrollToSection(item.href)}
                     className={`flex items-center w-full text-left px-4 py-3.5 rounded-xl transition-all duration-250 font-medium ${
                       isActive
-                        ? 'bg-gradient-to-r from-blush/40 to-lavender-light/20 text-muted-red'
-                        : 'text-gray-700 hover:bg-blush/20 hover:text-muted-red'
+                        ? 'bg-gradient-to-r from-primary/10 to-secondary/5 text-primary'
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                     }`}
                   >
                     {isActive && (
@@ -251,7 +251,7 @@ export default function Navbar() {
                         layoutId="mobileActive"
                         className="w-1 h-5 rounded-full mr-3"
                         style={{
-                          background: 'linear-gradient(180deg, #B23A3A, #B76E79)',
+                          background: 'linear-gradient(180deg, #FF6FAE, #D63384)',
                         }}
                       />
                     )}
@@ -268,7 +268,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection('#contact')}
                 className="relative overflow-hidden w-full text-white px-6 py-3.5 rounded-full transition-all mt-4 shadow-lg font-medium group"
                 style={{
-                  background: 'linear-gradient(135deg, #B23A3A, #B76E79, #c75050)',
+                  background: 'linear-gradient(135deg, #FF6FAE, #D63384, #FF6FAE)',
                 }}
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />

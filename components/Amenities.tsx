@@ -131,7 +131,7 @@ export default function Amenities() {
       <OrganicBlobs />
 
       {/* Curved divider at top */}
-      <CurvedDivider fromColor="#F5F1EA" toColor="#FFFFFF" flip />
+      <CurvedDivider fromColor="#FFFFFF" toColor="#FFFFFF" flip />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -147,7 +147,7 @@ export default function Amenities() {
               className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at center, rgba(183, 110, 121, 0.35) 0%, rgba(232, 213, 242, 0.25) 40%, transparent 70%)',
+                  'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
               }}
               animate={{
                 scale: [1, 1.4, 1],
@@ -159,7 +159,7 @@ export default function Amenities() {
                 ease: 'easeInOut',
               }}
             />
-            <p className="relative font-dancing text-xl sm:text-2xl text-rose-gold mb-3">
+            <p className="relative font-script text-2xl sm:text-3xl text-primary tracking-wider mb-3">
               Everything You Need
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function Amenities() {
           </h2>
           <div
             className="w-20 h-1 mx-auto mb-6"
-            style={{ background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)' }}
+            style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
           />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need for comfortable, convenient, and secure living – all under one roof
@@ -198,14 +198,14 @@ export default function Amenities() {
               >
                 {/* Icon container with bounce animation on hover */}
                 <motion.div
-                  className="bg-white rounded-full w-14 h-14 flex items-center justify-center mb-4 shadow-sm group-hover:bg-muted-red transition-colors duration-300"
+                  className="bg-white rounded-full w-14 h-14 flex items-center justify-center mb-4 shadow-sm group-hover:bg-primary transition-colors duration-300"
                   whileHover={{ rotate: [0, 8, -5, 3, 0] }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Icon className="w-7 h-7 text-muted-red group-hover:text-white transition-colors duration-300" />
+                  <Icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                 </motion.div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-muted-red transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-deep transition-colors duration-300">
                   {amenity.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{amenity.description}</p>

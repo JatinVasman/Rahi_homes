@@ -16,7 +16,7 @@ export default function Location() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="location" className="py-20 lg:py-32 bg-beige-light relative overflow-hidden">
+    <section id="location" className="py-20 lg:py-32 bg-[#F8F4F8] relative overflow-hidden">
       <CursorSpotlight className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -31,7 +31,7 @@ export default function Location() {
                 className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(183, 110, 121, 0.35) 0%, rgba(232, 213, 242, 0.25) 40%, transparent 70%)',
+                    'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
                 }}
                 animate={{
                   scale: [1, 1.4, 1],
@@ -43,7 +43,7 @@ export default function Location() {
                   ease: 'easeInOut',
                 }}
               />
-              <p className="relative font-dancing text-xl sm:text-2xl text-rose-gold mb-3">
+              <p className="relative font-script text-2xl sm:text-3xl text-primary tracking-wider mb-3">
                 Find Us Easily
               </p>
             </div>
@@ -52,7 +52,7 @@ export default function Location() {
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #B23A3A, #B76E79, #FFB5A0)' }}
+              style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Located in one of Mumbai&apos;s most well-connected neighborhoods
@@ -79,7 +79,7 @@ export default function Location() {
                 title="Rahi Homes Location"
               />
               {/* Rose-gold border glow on hover */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rose-gold/30 rounded-2xl transition-colors duration-500 pointer-events-none" />
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/15 rounded-2xl transition-colors duration-500 pointer-events-none" />
             </motion.div>
 
             {/* Address Details */}
@@ -95,7 +95,7 @@ export default function Location() {
               >
                 <div className="flex items-start space-x-4">
                   <motion.div
-                    className="bg-muted-red rounded-full p-3 flex-shrink-0"
+                    className="bg-primary rounded-full p-3 flex-shrink-0"
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.4 }}
                   >
@@ -118,7 +118,7 @@ export default function Location() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                className="card-glow bg-muted-red/5 rounded-xl p-6 border border-muted-red/20"
+                className="card-glow bg-primary/5 rounded-xl p-6 border border-primary/20"
               >
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">
                   🚇 Excellent Connectivity
@@ -137,7 +137,7 @@ export default function Location() {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 0.5 + index * 0.1 }}
                     >
-                      <span className="text-muted-red mr-2">•</span>
+                      <span className="text-primary mr-2">•</span>
                       <span>{item}</span>
                     </motion.li>
                   ))}
