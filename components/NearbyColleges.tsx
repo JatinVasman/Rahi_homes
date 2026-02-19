@@ -69,7 +69,7 @@ export default function NearbyColleges() {
   return (
     <section
       id="colleges"
-      className="py-20 lg:py-32 bg-gradient-to-b from-[#F8F4F8] to-white relative overflow-hidden"
+      className="py-20 lg:py-32 bg-gradient-to-b from-[#FFEFD6] to-[#FFF5E6] relative overflow-hidden"
     >
       <CursorSpotlight className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +108,7 @@ export default function NearbyColleges() {
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
+              style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Perfectly located near Mumbai&apos;s premier educational institutions

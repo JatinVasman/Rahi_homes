@@ -94,7 +94,7 @@ export default function Hero() {
                 <motion.span
                   className="absolute bottom-0 left-0 w-full h-0.5 sm:h-1"
                   style={{
-                    background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)',
+                    background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)',
                   }}
                   initial={{ scaleX: 0, transformOrigin: 'left' }}
                   animate={{ scaleX: 1 }}

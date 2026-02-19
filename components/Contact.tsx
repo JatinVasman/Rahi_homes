@@ -109,7 +109,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 lg:py-32 bg-gradient-to-b from-[#F8F4F8] to-white relative overflow-hidden"
+      className="py-20 lg:py-32 bg-gradient-to-b from-[#FFEFD6] to-[#FFF5E6] relative overflow-hidden"
     >
       <OrganicBlobs />
 
@@ -126,7 +126,7 @@ export default function Contact() {
               className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
+                  'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
               }}
               animate={{
                 scale: [1, 1.4, 1],
@@ -147,7 +147,7 @@ export default function Contact() {
           </h2>
           <div
             className="w-20 h-1 mx-auto mb-6"
-            style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
+            style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
           />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll
@@ -297,7 +297,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="btn-ripple w-full text-white px-8 py-4 rounded-lg font-medium hover:opacity-90 transition-all shadow-lg flex items-center justify-center space-x-2 group"
-                style={{ background: 'linear-gradient(135deg, #FF6FAE, #D63384)' }}
+                style={{ background: 'linear-gradient(135deg, #FF3C78, #FF6B2B)' }}
               >
                 <span>Send Message</span>
                 <motion.span

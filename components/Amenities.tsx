@@ -126,12 +126,12 @@ export default function Amenities() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="amenities" className="relative py-20 lg:py-32 bg-white overflow-hidden">
+    <section id="amenities" className="relative py-20 lg:py-32 bg-[#FFF5E6] overflow-hidden">
       {/* Organic blob backgrounds */}
       <OrganicBlobs />
 
       {/* Curved divider at top */}
-      <CurvedDivider fromColor="#FFFFFF" toColor="#FFFFFF" flip />
+      <CurvedDivider fromColor="#FFF5E6" toColor="#FFF5E6" flip />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -147,7 +147,7 @@ export default function Amenities() {
               className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
+                  'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
               }}
               animate={{
                 scale: [1, 1.4, 1],
@@ -168,7 +168,7 @@ export default function Amenities() {
           </h2>
           <div
             className="w-20 h-1 mx-auto mb-6"
-            style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
+            style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
           />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need for comfortable, convenient, and secure living – all under one roof

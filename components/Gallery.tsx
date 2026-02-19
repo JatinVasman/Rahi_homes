@@ -109,7 +109,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="relative overflow-hidden w-full max-w-full">
       {/* Carousel Container */}
-      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-gradient-to-br from-white via-[#F8F4F8] to-white">
+      <div className="relative group w-full max-w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-gradient-to-br from-[#FFF5E6] via-[#FFEFD6] to-[#FFF5E6]">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}

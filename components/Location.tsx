@@ -16,7 +16,7 @@ export default function Location() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="location" className="py-20 lg:py-32 bg-[#F8F4F8] relative overflow-hidden">
+    <section id="location" className="py-20 lg:py-32 bg-[#FFEFD6] relative overflow-hidden">
       <CursorSpotlight className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -52,7 +52,7 @@ export default function Location() {
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
+              style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Located in one of Mumbai&apos;s most well-connected neighborhoods

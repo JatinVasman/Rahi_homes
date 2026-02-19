@@ -125,7 +125,7 @@ export default function ContactPopup() {
             <div
               className="h-1"
               style={{
-                background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7, #D63384)',
+                background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800, #D91656)',
               }}
             />
 
@@ -237,7 +237,7 @@ export default function ContactPopup() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="btn-ripple w-full text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-all shadow-md flex items-center justify-center space-x-2 text-sm"
-                      style={{ background: 'linear-gradient(135deg, #FF6FAE, #D63384)' }}
+                      style={{ background: 'linear-gradient(135deg, #FF3C78, #FF6B2B)' }}
                     >
                       <span>Send Message</span>
                       <Send className="w-4 h-4" />

@@ -17,7 +17,7 @@ export default function FloorPlan() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <section id="floor-plan" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+    <section id="floor-plan" className="py-20 lg:py-32 bg-[#FFF5E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref}>
           {/* Section Header */}
@@ -32,7 +32,7 @@ export default function FloorPlan() {
                 className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
+                    'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
                 }}
                 animate={{
                   scale: [1, 1.4, 1],
@@ -53,7 +53,7 @@ export default function FloorPlan() {
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
+              style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
             />
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Explore the thoughtfully designed layout of Rahi Homes

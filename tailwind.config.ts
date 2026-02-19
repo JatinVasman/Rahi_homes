@@ -9,32 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       /* ──────────────────────────────────────────────
-       * COLOR PALETTE
-       * Soft pastel luxury feminine palette
+       * COLOR PALETTE — "Sunset Glow"
+       * Hot pink · Vivid orange · Bright golden
        * ────────────────────────────────────────────── */
       colors: {
         primary: {
-          light: '#FFD6E7',
-          DEFAULT: '#FF6FAE',
-          dark: '#D63384',
+          light: '#FF85A8',
+          DEFAULT: '#FF3C78',
+          dark: '#D91656',
         },
         secondary: {
-          light: '#E9D5FF',
-          DEFAULT: '#CDB4FF',
-          dark: '#A78BFA',
+          light: '#FFA06B',
+          DEFAULT: '#FF6B2B',
+          dark: '#E05510',
         },
         accent: {
-          light: '#FFE8D6',
-          DEFAULT: '#F7D9C4',
-          dark: '#F0C4A8',
+          light: '#FFDA4D',
+          DEFAULT: '#FFB800',
+          dark: '#E0A200',
         },
         soft: {
-          light: '#FFF9FC',
-          DEFAULT: '#FFE9F3',
-          dark: '#FFD6E7',
+          light: '#FFF8EE',
+          DEFAULT: '#FFEFD6',
+          dark: '#FFE0B8',
         },
-        background: '#FFF9FC',
-        deep: '#D63384',
+        background: '#FFF5E6',
+        deep: '#D91656',
       },
 
       /* ──────────────────────────────────────────────
@@ -69,10 +69,10 @@ const config: Config = {
         /* Pulsing glow effect for borders/shadows — subtle */
         'pulse-glow': {
           '0%, 100%': {
-            boxShadow: '0 0 6px rgba(255, 111, 174, 0.15)',
+            boxShadow: '0 0 8px rgba(255, 60, 120, 0.2)',
           },
           '50%': {
-            boxShadow: '0 0 14px rgba(255, 111, 174, 0.3)',
+            boxShadow: '0 0 18px rgba(255, 60, 120, 0.4)',
           },
         },
         /* Shimmer sweep for buttons */

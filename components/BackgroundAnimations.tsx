@@ -43,11 +43,11 @@ export function FloatingShapes({ count = 8 }: { count?: number }) {
   const shapes: FloatingShape[] = useMemo(() => {
     const configs: FloatingShape[] = []
     const colors = [
-      'rgba(255, 111, 174, 0.06)', // primary pink
-      'rgba(205, 180, 255, 0.08)', // secondary lilac
-      'rgba(247, 217, 196, 0.05)', // accent champagne
-      'rgba(233, 213, 255, 0.08)', // lavender
-      'rgba(255, 214, 231, 0.05)', // soft pink
+      'rgba(255, 60, 120, 0.08)', // hot pink
+      'rgba(255, 107, 43, 0.10)', // vivid orange
+      'rgba(255, 184, 0, 0.07)', // bright golden
+      'rgba(255, 160, 107, 0.09)', // light orange
+      'rgba(255, 133, 168, 0.06)', // light pink
     ]
 
     /* Predefined positions to avoid random() hydration issues */
@@ -178,7 +178,7 @@ export function OrganicBlobs() {
         className="blob absolute -top-20 -right-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px]"
         style={{
           background:
-            'linear-gradient(135deg, rgba(205, 180, 255, 0.08), rgba(255, 214, 231, 0.06))',
+            'linear-gradient(135deg, rgba(255, 107, 43, 0.10), rgba(255, 133, 168, 0.08))',
         }}
       />
       {/* Bottom-left blob: soft peach */}
@@ -186,7 +186,7 @@ export function OrganicBlobs() {
         className="blob-slow absolute -bottom-24 -left-24 w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
         style={{
           background:
-            'linear-gradient(135deg, rgba(255, 111, 174, 0.06), rgba(255, 249, 252, 0.08))',
+            'linear-gradient(135deg, rgba(255, 60, 120, 0.08), rgba(255, 245, 230, 0.10))',
           animationDelay: '4s',
         }}
       />
@@ -334,7 +334,7 @@ export function FloatingHearts() {
  * Renders an SVG with pastel gradient fill.
  * ═══════════════════════════════════════════════════ */
 export function CurvedDivider({
-  fromColor = '#FFF9FC',
+  fromColor = '#FFF5E6',
   toColor = '#FFFFFF',
   flip = false,
 }: {
@@ -358,7 +358,7 @@ export function CurvedDivider({
             y2="0%"
           >
             <stop offset="0%" stopColor={fromColor} />
-            <stop offset="50%" stopColor="rgba(255, 214, 231, 0.5)" />
+            <stop offset="50%" stopColor="rgba(255, 184, 0, 0.5)" />
             <stop offset="100%" stopColor={toColor} />
           </linearGradient>
         </defs>

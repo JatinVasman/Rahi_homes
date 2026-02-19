@@ -70,7 +70,7 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 right-0 h-[2px]"
           style={{
             background:
-              'linear-gradient(90deg, transparent, #FF6FAE, #CDB4FF, #FFE9F3, transparent)',
+              'linear-gradient(90deg, transparent, #FF3C78, #FF6B2B, #FFB800, transparent)',
           }}
         />
       )}
@@ -137,7 +137,7 @@ export default function Navbar() {
                       className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full"
                       style={{
                         background: isScrolled
-                          ? 'linear-gradient(135deg, #FF6FAE, #D63384)'
+                          ? 'linear-gradient(135deg, #FF3C78, #D91656)'
                           : 'white',
                       }}
                       transition={{
@@ -161,7 +161,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="relative ml-4 overflow-hidden text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-150 group"
               style={{
-                background: 'linear-gradient(135deg, #FF6FAE, #D63384, #FF6FAE)',
+                background: 'linear-gradient(135deg, #FF3C78, #FF6B2B, #FF3C78)',
               }}
             >
               {/* Shimmer overlay */}
@@ -226,7 +226,7 @@ export default function Navbar() {
             <div
               className="h-[1px] w-full"
               style={{
-                background: 'linear-gradient(90deg, transparent, #FF6FAE, #CDB4FF, transparent)',
+                background: 'linear-gradient(90deg, transparent, #FF3C78, #FF6B2B, transparent)',
               }}
             />
 
@@ -251,7 +251,7 @@ export default function Navbar() {
                         layoutId="mobileActive"
                         className="w-1 h-5 rounded-full mr-3"
                         style={{
-                          background: 'linear-gradient(180deg, #FF6FAE, #D63384)',
+                          background: 'linear-gradient(180deg, #FF3C78, #D91656)',
                         }}
                       />
                     )}
@@ -268,7 +268,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection('#contact')}
                 className="relative overflow-hidden w-full text-white px-6 py-3.5 rounded-full transition-all mt-4 shadow-lg font-medium group"
                 style={{
-                  background: 'linear-gradient(135deg, #FF6FAE, #D63384, #FF6FAE)',
+                  background: 'linear-gradient(135deg, #FF3C78, #FF6B2B, #FF3C78)',
                 }}
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />

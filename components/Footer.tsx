@@ -20,13 +20,13 @@ export default function Footer() {
   return (
     <footer
       className="relative text-white py-12 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #3A0D2E 0%, #2A0A3A 50%, #1A0520 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #2D0A0A 0%, #1F0D15 50%, #120508 100%)' }}
     >
       {/* Subtle gradient accent at top */}
       <div
         className="absolute top-0 left-0 right-0 h-1"
         style={{
-          background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFE9F3, #D63384, #FF6FAE)',
+          background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800, #D91656, #FF3C78)',
         }}
       />
 

@@ -29,12 +29,12 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-16 sm:py-20 lg:py-32 bg-white overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-20 lg:py-32 bg-[#FFF5E6] overflow-hidden">
       {/* Decorative blob backgrounds */}
       <OrganicBlobs />
 
       {/* Curved bottom divider */}
-      <CurvedDivider fromColor="#FFFFFF" toColor="#FFFFFF" />
+      <CurvedDivider fromColor="#FFF5E6" toColor="#FFF5E6" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -74,7 +74,7 @@ export default function About() {
                   className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                   style={{
                     background:
-                      'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
+                      'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
                   }}
                   animate={{
                     scale: [1, 1.4, 1],
@@ -95,7 +95,7 @@ export default function About() {
               </h2>
               <div
                 className="w-20 h-1 mb-6 sm:mb-8"
-                style={{ background: 'linear-gradient(90deg, #FF6FAE, #CDB4FF, #FFD6E7)' }}
+                style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
               />
             </motion.div>
 
