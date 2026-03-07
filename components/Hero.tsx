@@ -66,16 +66,6 @@ export default function Hero() {
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ y: contentY, opacity: opacityOnScroll }}
       >
-        {/* Decorative subtitle in Dancing Script */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-script text-2xl sm:text-3xl text-primary tracking-wider mb-4"
-        >
-          Welcome to Your Dream Home
-        </motion.p>
-
         {/* Main heading with gradient text effect and text shadow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

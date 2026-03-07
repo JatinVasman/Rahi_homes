@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X, Sparkles, Download } from 'lucide-react'
 import Image from 'next/image'
 
 /* ═══════════════════════════════════════════════════
@@ -151,6 +151,26 @@ export default function Navbar() {
               )
             })}
 
+            {/* Download Brochure Link */}
+            <motion.a
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              href="/Rahi%20Homes%20pdf.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -1 }}
+              whileTap={{ scale: 0.95 }}
+              className={`relative ml-4 flex items-center gap-1.5 px-4 lg:px-5 py-2 lg:py-2.5 rounded-full font-medium transition-all duration-150 border-2 ${
+                isScrolled
+                  ? 'border-gray-200 text-gray-700 hover:border-primary hover:text-primary bg-white hover:bg-gray-50'
+                  : 'border-white/30 text-white hover:border-white hover:bg-white/10'
+              }`}
+            >
+              <Download className="w-4 h-4" />
+              <span>Brochure</span>
+            </motion.a>
+
             {/* CTA Button — gradient with shimmer */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
@@ -259,6 +279,20 @@ export default function Navbar() {
                   </motion.button>
                 )
               })}
+
+              {/* Mobile Brochure Link */}
+              <motion.a
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.35 }}
+                href="/Rahi%20Homes%20pdf.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full text-primary border-2 border-primary/20 px-6 py-3.5 rounded-xl transition-all mt-4 font-medium hover:bg-primary/5"
+              >
+                <Download className="w-5 h-5" />
+                Download Brochure
+              </motion.a>
 
               {/* Mobile CTA */}
               <motion.button

@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import StudentLife from '@/components/StudentLife'
 import Gallery from '@/components/Gallery'
 import Amenities from '@/components/Amenities'
 import NearbyColleges from '@/components/NearbyColleges'
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <StudentLife />
       <Gallery />
       <Amenities />
       <NearbyColleges />
