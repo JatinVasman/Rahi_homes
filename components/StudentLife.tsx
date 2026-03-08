@@ -97,7 +97,7 @@ export default function StudentLife() {
               className="absolute top-0 right-0 w-[80%] h-[70%] rounded-3xl overflow-hidden shadow-2xl z-10 border-4 border-white"
             >
               <Image
-                src="/images/students-images2.jpg"
+                src="/images/students-images2.jpeg"
                 alt="Students Community at Rahi Homes 2"
                 fill
                 className="object-cover"
