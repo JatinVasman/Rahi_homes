@@ -6,35 +6,14 @@ import { useRef } from 'react'
 import Image from 'next/image'
 import { OrganicBlobs, CurvedDivider } from './BackgroundAnimations'
 
-/* ═══════════════════════════════════════════════════
- * ABOUT SECTION — Enhanced with blobs, stagger, and
- *                 gradient text effects
- *
- * BEFORE:
- *  - Simple fade-in/slide-in animations
- *  - Plain bg-beige-light background
- *
- * AFTER:
- *  - Organic blob backgrounds for depth
- *  - Dancing Script decorative subtitle
- *  - Gradient text effect on heading
- *  - Stagger content animations
- *  - Image hover zoom effect
- *  - Number counter-style stat cards
- *  - Curved section divider
- * ═══════════════════════════════════════════════════ */
-
 export default function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-16 sm:py-20 lg:py-32 bg-[#FFF5E6] overflow-hidden">
-      {/* Decorative blob backgrounds */}
+    <section id="about" className="relative section-padding bg-[#EFE9D8] overflow-hidden">
       <OrganicBlobs />
-
-      {/* Curved bottom divider */}
-      <CurvedDivider fromColor="#FFF5E6" toColor="#FFF5E6" />
+      <CurvedDivider fromColor="#EFE9D8" toColor="#EFE9D8" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -53,7 +32,6 @@ export default function About() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            {/* Rose-gold border glow on hover */}
             <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/15 rounded-2xl transition-colors duration-500" />
           </motion.div>
 
@@ -68,13 +46,12 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {/* Dancing Script decorative subtitle with glow */}
               <div className="relative inline-block">
                 <motion.div
                   className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                   style={{
                     background:
-                      'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
+                      'radial-gradient(ellipse at center, rgba(15, 94, 110, 0.12) 0%, rgba(15, 94, 110, 0.06) 40%, transparent 70%)',
                   }}
                   animate={{
                     scale: [1, 1.4, 1],
@@ -90,12 +67,12 @@ export default function About() {
                   Your Home Away From Home
                 </p>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 text-shadow-soft">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F5E6E] mb-4 sm:mb-6 text-shadow-soft">
                 About Rahi Homes
               </h2>
               <div
                 className="w-20 h-1 mb-6 sm:mb-8"
-                style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
+                style={{ background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)' }}
               />
             </motion.div>
 
@@ -144,7 +121,7 @@ export default function About() {
                 { value: '3', label: 'Floors' },
                 { value: '2-4', label: 'Sharing Options' },
                 { value: '24/7', label: 'Security' },
-              ].map((stat, index) => (
+              ].map((stat) => (
                 <motion.div
                   key={stat.label}
                   whileHover={{ y: -5, scale: 1.05 }}

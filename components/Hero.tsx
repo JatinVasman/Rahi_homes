@@ -2,30 +2,11 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { AnimatedGradientMesh, FloatingHearts } from './BackgroundAnimations'
+import { AnimatedGradientMesh } from './BackgroundAnimations'
 
-/* ═══════════════════════════════════════════════════
- * HERO SECTION — Enhanced with animated backgrounds
- *
- * BEFORE (original):
- *  - Static background image with dark overlay
- *  - Simple fade-in text animation
- *
- * AFTER (enhanced):
- *  - Animated gradient mesh (beige → pink → lavender)
- *  - Floating abstract shapes (circles, rounded rects)
- *  - Particle system with glowing dots drifting upward
- *  - Parallax scroll effect on background image
- *  - Gradient text effect on heading
- *  - Floating hearts decoration
- *  - Text shadow for depth
- *  - Decorative subtitle in Dancing Script font
- *  - Enhanced letter spacing animation on hover
- * ═══════════════════════════════════════════════════ */
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
-  /* Parallax: background image moves slower than scroll */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
@@ -33,6 +14,13 @@ export default function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], [0, 150])
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -50])
   const opacityOnScroll = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <section
@@ -51,22 +39,16 @@ export default function Hero() {
             backgroundImage: `url('/images/3_bed_Room_pic2.webp')`,
           }}
         />
-        {/* Gradient overlay: softer with pink/lavender tint */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F5E6E]/20 via-transparent to-[#F04E1E]/10" />
       </motion.div>
-
-      {/* ── Layer 3: Floating Hearts ──────────────────────────── */}
-      <div className="absolute inset-0 z-[2]">
-        <FloatingHearts />
-      </div>
 
       {/* ── Content ──────────────────────────────────────────── */}
       <motion.div
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ y: contentY, opacity: opacityOnScroll }}
       >
-        {/* Main heading with gradient text effect and text shadow */}
+        {/* Main heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,11 +62,10 @@ export default function Hero() {
             >
               <span className="relative pb-1">
                 Rahi
-                {/* Animated underline with gradient */}
                 <motion.span
                   className="absolute bottom-0 left-0 w-full h-0.5 sm:h-1"
                   style={{
-                    background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)',
+                    background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)',
                   }}
                   initial={{ scaleX: 0, transformOrigin: 'left' }}
                   animate={{ scaleX: 1 }}

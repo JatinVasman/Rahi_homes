@@ -3,23 +3,26 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════
- * CSS CUSTOM PROPERTIES — "Sunset Glow"
- * Hot pink · Vivid orange · Bright golden
+ * CSS CUSTOM PROPERTIES — "Beach Breeze"
+ * Deep teal · Bright orange · Soft blue
  * ═══════════════════════════════════════════════════ */
 :root {
   /* Primary palette */
-  --color-primary: #ff3c78;
-  --color-primary-light: #ff85a8;
-  --color-deep: #d91656;
+  --color-primary: #0f5e6e;
+  --color-primary-light: #0F5E6E;
+  --color-deep: #d94114;
 
   /* Accent palette */
-  --color-secondary: #ff6b2b;
-  --color-accent: #ffb800;
-  --color-soft: #ffefd6;
-  --color-background: #fff5e6;
+  --color-secondary: #f04e1e;
+  --color-accent: #0F5E6E;
+  --color-soft: #f5f0e5;
+  --color-background: #efe9d8;
+
+  /* Borders */
+  --color-border: #d5cfc1;
 
   /* Gradient stops used in mesh backgrounds */
-  --gradient-hero: linear-gradient(135deg, #fff5e6 0%, #ff85a8 30%, #ffa06b 60%, #fff5e6 100%);
+  --gradient-hero: linear-gradient(135deg, #efe9d8 0%, #0F5E6E 30%, #0f5e6e 60%, #efe9d8 100%);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -36,8 +39,7 @@ body {
 }
 
 body {
-  @apply bg-[#FFF5E6] text-gray-900 font-jakarta;
-  /* ✨ Updated body text for readability: 17px base, 1.7 line-height */
+  @apply bg-[#EFE9D8] text-[#1A1A1A] font-jakarta;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -49,22 +51,21 @@ h4,
 h5,
 h6 {
   @apply font-playfair;
+  font-weight: 700;
 }
 
 /* ═══════════════════════════════════════════════════
  * TEXT GRADIENT EFFECT
- * Apply to headings with .text-gradient class
- * Uses background-clip for GPU-accelerated rendering
  * ═══════════════════════════════════════════════════ */
 .text-gradient {
-  background: linear-gradient(135deg, #ff3c78 0%, #ff6b2b 50%, #ffb800 100%);
+  background: linear-gradient(135deg, #0f5e6e 0%, #0F5E6E 50%, #f04e1e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.text-gradient-pink {
-  background: linear-gradient(135deg, #ff3c78 0%, #d91656 50%, #ff6b2b 100%);
+.text-gradient-teal {
+  background: linear-gradient(135deg, #0f5e6e 0%, #0F5E6E 50%, #0F5E6E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,11 +73,9 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * ANIMATED GRADIENT MESH BACKGROUND
- * Smooth morphing gradient for Hero section
- * Uses background-size 300% for seamless loop
  * ═══════════════════════════════════════════════════ */
 .gradient-mesh {
-  background: linear-gradient(-45deg, #fff5e6, #ff85a8, #ffa06b, #ffb800, #ffefd6);
+  background: linear-gradient(-45deg, #efe9d8, #0F5E6E, #0f5e6e, #0F5E6E, #f5f0e5);
   background-size: 400% 400%;
   animation: gradientMesh 12s ease infinite;
 }
@@ -101,8 +100,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * FLOATING SHAPES
- * Abstract decorative shapes with soft opacity
- * GPU-accelerated via transform + opacity
  * ═══════════════════════════════════════════════════ */
 .floating-shape {
   position: absolute;
@@ -145,13 +142,11 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * PARTICLE SYSTEM
- * Glowing dots that drift upward
- * Uses opacity + translateY (GPU-friendly)
  * ═══════════════════════════════════════════════════ */
 .particle {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 60, 120, 0.7) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15, 94, 110, 0.5) 0%, transparent 70%);
   will-change: transform, opacity;
   animation: particleDrift linear infinite;
 }
@@ -176,8 +171,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * ORGANIC BLOB SHAPES
- * Morphing blobs for section backgrounds
- * Uses border-radius animation (GPU-friendly)
  * ═══════════════════════════════════════════════════ */
 .blob {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -207,7 +200,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * WAVE SECTION DIVIDER
- * Pastel gradient wave between sections
  * ═══════════════════════════════════════════════════ */
 .wave-divider {
   position: relative;
@@ -221,7 +213,7 @@ h6 {
   left: -50%;
   width: 200%;
   height: 60px;
-  background: linear-gradient(90deg, #ff85a8, #ff6b2b, #ffb800, #ff85a8);
+  background: linear-gradient(90deg, #0F5E6E, #0f5e6e, #f04e1e, #0F5E6E);
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   animation: waveMove 12s linear infinite;
   opacity: 0.4;
@@ -238,8 +230,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * CURSOR SPOTLIGHT
- * Soft radial light that follows the mouse
- * Applied via JS setting --mouse-x / --mouse-y
  * ═══════════════════════════════════════════════════ */
 .cursor-spotlight {
   position: relative;
@@ -251,7 +241,7 @@ h6 {
   inset: 0;
   background: radial-gradient(
     600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 60, 120, 0.08),
+    rgba(15, 94, 110, 0.08),
     transparent 60%
   );
   pointer-events: none;
@@ -260,10 +250,7 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * CARD HOVER EFFECTS
- * Reusable hover styles for amenity & college cards
  * ═══════════════════════════════════════════════════ */
-
-/* Pink border glow on hover */
 .card-glow {
   transition:
     box-shadow 0.3s ease,
@@ -272,27 +259,25 @@ h6 {
 }
 
 .card-glow:hover {
-  border-color: rgba(255, 60, 120, 0.25);
+  border-color: rgba(15, 94, 110, 0.25);
   box-shadow:
-    0 0 15px rgba(255, 60, 120, 0.12),
-    0 4px 20px rgba(255, 107, 43, 0.08);
+    0 0 15px rgba(15, 94, 110, 0.12),
+    0 4px 20px rgba(15, 94, 110, 0.12);
 }
 
-/* Background gradient shift on hover */
 .card-gradient-hover {
-  background: linear-gradient(135deg, #fff8ee 0%, #fff8ee 100%);
+  background: linear-gradient(135deg, #f5f0e5 0%, #f5f0e5 100%);
   background-size: 200% 200%;
   transition: background-position 0.4s ease;
 }
 
 .card-gradient-hover:hover {
   background-position: 100% 100%;
-  background: linear-gradient(135deg, #ffefd6 0%, #ffa06b 50%, #fff8ee 100%);
+  background: linear-gradient(135deg, #efe9d8 0%, rgba(15, 94, 110, 0.15) 50%, #f5f0e5 100%);
 }
 
 /* ═══════════════════════════════════════════════════
  * BUTTON EFFECTS
- * Ripple effect & pulse animation for CTAs
  * ═══════════════════════════════════════════════════ */
 .btn-ripple {
   position: relative;
@@ -323,7 +308,6 @@ h6 {
   transition: 0s;
 }
 
-/* Pulse animation for CTA buttons */
 .btn-pulse {
   animation: btnPulse 2.5s ease-in-out infinite;
 }
@@ -331,16 +315,43 @@ h6 {
 @keyframes btnPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 60, 120, 0.35);
+    box-shadow: 0 0 0 0 rgba(240, 78, 30, 0.35);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(255, 60, 120, 0);
+    box-shadow: 0 0 0 10px rgba(240, 78, 30, 0);
   }
 }
 
 /* ═══════════════════════════════════════════════════
+ * CTA BUTTON GLOBAL STYLE
+ * ═══════════════════════════════════════════════════ */
+.btn-cta {
+  background-color: #f04e1e;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 26px;
+  font-weight: 600;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cta:hover {
+  background-color: #d94114;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(240, 78, 30, 0.3);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════
  * NAVIGATION UNDERLINE SWEEP
- * Left-to-right underline animation on hover
  * ═══════════════════════════════════════════════════ */
 .nav-link-hover {
   position: relative;
@@ -353,7 +364,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #ff3c78, #ff6b2b);
+  background: linear-gradient(90deg, #0f5e6e, #f04e1e);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -365,7 +376,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * FORM INPUT FOCUS GLOW
- * Soft pink glow on input focus
  * ═══════════════════════════════════════════════════ */
 .input-glow {
   transition:
@@ -374,10 +384,10 @@ h6 {
 }
 
 .input-glow:focus {
-  border-color: #ff3c78 !important;
+  border-color: #0f5e6e !important;
   box-shadow:
-    0 0 0 3px rgba(255, 60, 120, 0.2),
-    0 0 12px rgba(255, 107, 43, 0.15);
+    0 0 0 3px rgba(15, 94, 110, 0.2),
+    0 0 12px rgba(15, 94, 110, 0.12);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -400,7 +410,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * DECORATIVE CORNER FLOURISH
- * Subtle gradient accents on card corners
  * ═══════════════════════════════════════════════════ */
 .corner-flourish {
   position: relative;
@@ -414,14 +423,13 @@ h6 {
   right: -1px;
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, transparent 50%, rgba(255, 60, 120, 0.12) 50%);
+  background: linear-gradient(135deg, transparent 50%, rgba(15, 94, 110, 0.12) 50%);
   border-radius: 0 0.75rem 0 0;
   z-index: 1;
 }
 
 /* ═══════════════════════════════════════════════════
  * TEXT SHADOW UTILITY
- * Subtle depth for headings
  * ═══════════════════════════════════════════════════ */
 .text-shadow-soft {
   text-shadow:
@@ -436,9 +444,29 @@ h6 {
 }
 
 /* ═══════════════════════════════════════════════════
+ * SECTION SPACING — Consistent padding
+ * ═══════════════════════════════════════════════════ */
+.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
  * ACCESSIBILITY: REDUCED MOTION
- * Disable / simplify animations for users who
- * prefer reduced motion
  * ═══════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -462,7 +490,6 @@ h6 {
 
 /* ═══════════════════════════════════════════════════
  * MOBILE PERFORMANCE OPTIMIZATIONS
- * Reduce animation complexity on smaller screens
  * ═══════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .floating-shape {
@@ -477,7 +504,6 @@ h6 {
     animation-duration: 20s;
   }
 
-  /* Faster transitions on mobile */
   .card-glow,
   .card-gradient-hover,
   .nav-link-hover::after {

@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import VideoTour from '@/components/VideoTour'
 import StudentLife from '@/components/StudentLife'
 import Gallery from '@/components/Gallery'
 import Amenities from '@/components/Amenities'
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <VideoTour />
       <StudentLife />
       <Gallery />
       <Amenities />

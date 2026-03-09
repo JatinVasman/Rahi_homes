@@ -17,7 +17,7 @@ export default function FloorPlan() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <section id="floor-plan" className="py-20 lg:py-32 bg-[#FFF5E6] relative overflow-hidden">
+    <section id="floor-plan" className="section-padding bg-[#EFE9D8] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref}>
           {/* Section Header */}
@@ -32,7 +32,7 @@ export default function FloorPlan() {
                 className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
+                    'radial-gradient(ellipse at center, rgba(15, 94, 110, 0.12) 0%, rgba(15, 94, 110, 0.06) 40%, transparent 70%)',
                 }}
                 animate={{
                   scale: [1, 1.4, 1],
@@ -48,12 +48,12 @@ export default function FloorPlan() {
                 Thoughtfully Designed
               </p>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-shadow-soft">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0F5E6E] mb-4 text-shadow-soft">
               Floor Plan
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
+              style={{ background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)' }}
             />
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Explore the thoughtfully designed layout of Rahi Homes
@@ -101,7 +101,7 @@ export default function FloorPlan() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsModalOpen(true)}
-                className="btn-ripple flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-white rounded-full hover:bg-deep transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="btn-ripple flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-white rounded-[10px] hover:bg-deep transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5" />
                 View Full Size

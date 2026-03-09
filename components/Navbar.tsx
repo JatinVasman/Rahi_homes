@@ -5,11 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, Download } from 'lucide-react'
 import Image from 'next/image'
 
-/* ═══════════════════════════════════════════════════
- * NAVBAR — Premium aesthetic with glassmorphism,
- *          gradient accents, and micro-interactions
- * ═══════════════════════════════════════════════════ */
-
 const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
@@ -28,7 +23,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      // Detect active section
       const sections = navItems.map((item) => item.href.replace('#', ''))
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
@@ -57,7 +51,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-primary/5'
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-[#0F5E6E]/5'
           : 'bg-gradient-to-b from-black/30 to-transparent'
       }`}
     >
@@ -70,14 +64,14 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 right-0 h-[2px]"
           style={{
             background:
-              'linear-gradient(90deg, transparent, #FF3C78, #FF6B2B, #FFB800, transparent)',
+              'linear-gradient(90deg, transparent, #0F5E6E, #0F5E6E, #F04E1E, transparent)',
           }}
         />
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo with hover glow */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -92,7 +86,7 @@ export default function Navbar() {
                 className={`rounded-lg px-2.5 py-1.5 transition-all duration-400 ${
                   isScrolled
                     ? 'bg-transparent group-hover:bg-gray-50'
-                    : 'bg-white/95 shadow-lg shadow-black/10 group-hover:shadow-primary/20 group-hover:shadow-xl'
+                    : 'bg-white/95 shadow-lg shadow-black/10 group-hover:shadow-[#0F5E6E]/20 group-hover:shadow-xl'
                 }`}
               >
                 <Image
@@ -121,24 +115,21 @@ export default function Navbar() {
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-150 rounded-lg ${
                     isScrolled
                       ? isActive
-                        ? 'text-primary'
-                        : 'text-gray-600 hover:text-primary hover:bg-gray-50'
+                        ? 'text-[#0F5E6E]'
+                        : 'text-gray-600 hover:text-[#0F5E6E] hover:bg-gray-50'
                       : isActive
                         ? 'text-white'
-                        : 'text-white/80 hover:text-white hover:bg-white/10'
+                        : 'text-white/80 hover:text-[#F04E1E] hover:bg-white/15'
                   }`}
                 >
                   {item.name}
 
-                  {/* Active indicator — animated underline dot */}
                   {isActive && (
                     <motion.div
                       layoutId="activeNav"
                       className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full"
                       style={{
-                        background: isScrolled
-                          ? 'linear-gradient(135deg, #FF3C78, #D91656)'
-                          : 'white',
+                        background: isScrolled ? '#0F5E6E' : 'white',
                       }}
                       transition={{
                         type: 'spring',
@@ -161,9 +152,9 @@ export default function Navbar() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
-              className={`relative ml-4 flex items-center gap-1.5 px-4 lg:px-5 py-2 lg:py-2.5 rounded-full font-medium transition-all duration-150 border-2 ${
+              className={`relative ml-4 flex items-center gap-1.5 px-4 lg:px-5 py-2 lg:py-2.5 rounded-[10px] font-medium transition-all duration-150 border-2 ${
                 isScrolled
-                  ? 'border-gray-200 text-gray-700 hover:border-primary hover:text-primary bg-white hover:bg-gray-50'
+                  ? 'border-[#D5CFC1] text-gray-700 hover:border-[#0F5E6E] hover:text-[#0F5E6E] bg-white hover:bg-gray-50'
                   : 'border-white/30 text-white hover:border-white hover:bg-white/10'
               }`}
             >
@@ -171,7 +162,7 @@ export default function Navbar() {
               <span>Brochure</span>
             </motion.a>
 
-            {/* CTA Button — gradient with shimmer */}
+            {/* CTA Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -179,12 +170,11 @@ export default function Navbar() {
               onClick={() => scrollToSection('#contact')}
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
-              className="relative ml-4 overflow-hidden text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-150 group"
+              className="relative ml-4 overflow-hidden text-white px-6 py-2.5 rounded-[10px] font-medium shadow-lg hover:shadow-xl transition-all duration-150 group"
               style={{
-                background: 'linear-gradient(135deg, #FF3C78, #FF6B2B, #FF3C78)',
+                background: '#F04E1E',
               }}
             >
-              {/* Shimmer overlay */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-400 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
               <span className="relative flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4" />
@@ -200,7 +190,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.9 }}
               className={`p-2.5 rounded-xl transition-all duration-150 ${
                 isScrolled
-                  ? 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                  ? 'text-gray-700 hover:bg-gray-50 hover:text-[#0F5E6E]'
                   : 'text-white hover:bg-white/15 backdrop-blur-sm'
               }`}
             >
@@ -232,7 +222,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu — full glassmorphism overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -240,13 +230,12 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="md:hidden bg-white/95 backdrop-blur-2xl border-t border-primary/10"
+            className="md:hidden bg-white/95 backdrop-blur-2xl border-t border-[#0F5E6E]/10"
           >
-            {/* Rose-gold gradient line at top */}
             <div
               className="h-[1px] w-full"
               style={{
-                background: 'linear-gradient(90deg, transparent, #FF3C78, #FF6B2B, transparent)',
+                background: 'linear-gradient(90deg, transparent, #0F5E6E, #F04E1E, transparent)',
               }}
             />
 
@@ -262,8 +251,8 @@ export default function Navbar() {
                     onClick={() => scrollToSection(item.href)}
                     className={`flex items-center w-full text-left px-4 py-3.5 rounded-xl transition-all duration-250 font-medium ${
                       isActive
-                        ? 'bg-gradient-to-r from-primary/10 to-secondary/5 text-primary'
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                        ? 'bg-gradient-to-r from-[#0F5E6E]/10 to-[#0F5E6E]/10 text-[#0F5E6E]'
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-[#0F5E6E]'
                     }`}
                   >
                     {isActive && (
@@ -271,7 +260,7 @@ export default function Navbar() {
                         layoutId="mobileActive"
                         className="w-1 h-5 rounded-full mr-3"
                         style={{
-                          background: 'linear-gradient(180deg, #FF3C78, #D91656)',
+                          background: '#0F5E6E',
                         }}
                       />
                     )}
@@ -288,7 +277,7 @@ export default function Navbar() {
                 href="/Rahi%20Homes%20pdf.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full text-primary border-2 border-primary/20 px-6 py-3.5 rounded-xl transition-all mt-4 font-medium hover:bg-primary/5"
+                className="flex items-center justify-center gap-2 w-full text-[#0F5E6E] border-2 border-[#0F5E6E]/20 px-6 py-3.5 rounded-xl transition-all mt-4 font-medium hover:bg-[#0F5E6E]/5"
               >
                 <Download className="w-5 h-5" />
                 Download Brochure
@@ -300,9 +289,9 @@ export default function Navbar() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
                 onClick={() => scrollToSection('#contact')}
-                className="relative overflow-hidden w-full text-white px-6 py-3.5 rounded-full transition-all mt-4 shadow-lg font-medium group"
+                className="relative overflow-hidden w-full text-white px-6 py-3.5 rounded-[10px] transition-all mt-4 shadow-lg font-medium group"
                 style={{
-                  background: 'linear-gradient(135deg, #FF3C78, #FF6B2B, #FF3C78)',
+                  background: '#F04E1E',
                 }}
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />

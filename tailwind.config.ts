@@ -9,32 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       /* ──────────────────────────────────────────────
-       * COLOR PALETTE — "Sunset Glow"
-       * Hot pink · Vivid orange · Bright golden
+       * COLOR PALETTE — "Beach Breeze"
+       * Deep teal · Bright orange · Soft blue
        * ────────────────────────────────────────────── */
       colors: {
         primary: {
-          light: '#FF85A8',
-          DEFAULT: '#FF3C78',
-          dark: '#D91656',
+          light: '#1A8A9E',
+          DEFAULT: '#0F5E6E',
+          dark: '#0A4550',
         },
         secondary: {
-          light: '#FFA06B',
-          DEFAULT: '#FF6B2B',
-          dark: '#E05510',
+          light: '#F47040',
+          DEFAULT: '#F04E1E',
+          dark: '#D94114',
         },
         accent: {
-          light: '#FFDA4D',
-          DEFAULT: '#FFB800',
-          dark: '#E0A200',
+          light: '#1A8A9E',
+          DEFAULT: '#0F5E6E',
+          dark: '#0A4550',
         },
         soft: {
-          light: '#FFF8EE',
-          DEFAULT: '#FFEFD6',
-          dark: '#FFE0B8',
+          light: '#F5F0E5',
+          DEFAULT: '#EFE9D8',
+          dark: '#E0D9C6',
         },
-        background: '#FFF5E6',
-        deep: '#D91656',
+        background: '#EFE9D8',
+        deep: '#D94114',
+        border: '#D5CFC1',
       },
 
       /* ──────────────────────────────────────────────

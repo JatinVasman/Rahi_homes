@@ -16,7 +16,7 @@ export default function Location() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="location" className="py-20 lg:py-32 bg-[#FFEFD6] relative overflow-hidden">
+    <section id="location" className="section-padding bg-[#F5F0E5] relative overflow-hidden">
       <CursorSpotlight className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -31,7 +31,7 @@ export default function Location() {
                 className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(255, 111, 174, 0.15) 0%, rgba(205, 180, 255, 0.1) 40%, transparent 70%)',
+                    'radial-gradient(ellipse at center, rgba(15, 94, 110, 0.12) 0%, rgba(15, 94, 110, 0.06) 40%, transparent 70%)',
                 }}
                 animate={{
                   scale: [1, 1.4, 1],
@@ -47,12 +47,12 @@ export default function Location() {
                 Find Us Easily
               </p>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-shadow-soft">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0F5E6E] mb-6 text-shadow-soft">
               Our Location
             </h2>
             <div
               className="w-20 h-1 mx-auto mb-6"
-              style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
+              style={{ background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)' }}
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Located in one of Mumbai&apos;s most well-connected neighborhoods

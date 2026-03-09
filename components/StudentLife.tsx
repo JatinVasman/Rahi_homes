@@ -11,21 +11,40 @@ export default function StudentLife() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section
-      id="student-life"
-      className="relative py-16 sm:py-20 lg:py-32 bg-[#FFF9F0] overflow-hidden"
-    >
+    <section id="student-life" className="relative section-padding bg-[#EFE9D8] overflow-hidden">
       <OrganicBlobs />
-      <CurvedDivider fromColor="#FFF9F0" toColor="#FFF9F0" />
+      <CurvedDivider fromColor="#EFE9D8" toColor="#EFE9D8" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Content Column */}
+          {/* Image Column — single image on the left */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="relative h-[350px] sm:h-[450px] lg:h-[550px] rounded-2xl overflow-hidden shadow-2xl group order-1"
+          >
+            <Image
+              src="/images/students-images.jpeg"
+              alt="Students Community at Rahi Homes"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/15 rounded-2xl transition-colors duration-500" />
+
+            {/* Decorative elements */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-xl -z-10 pointer-events-none" />
+            <div className="absolute -bottom-8 -left-4 w-32 h-32 bg-gradient-to-tr from-accent/15 to-primary/15 rounded-full blur-xl -z-10 pointer-events-none" />
+          </motion.div>
+
+          {/* Content Column — text on the right */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-2 lg:order-1"
+            className="order-2"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -37,7 +56,7 @@ export default function StudentLife() {
                   className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
                   style={{
                     background:
-                      'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.15) 0%, rgba(255, 107, 43, 0.1) 40%, transparent 70%)',
+                      'radial-gradient(ellipse at center, rgba(15, 94, 110, 0.12) 0%, rgba(15, 94, 110, 0.06) 40%, transparent 70%)',
                   }}
                   animate={{
                     scale: [1, 1.2, 1],
@@ -53,12 +72,12 @@ export default function StudentLife() {
                   A Vibrant Community
                 </p>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 text-shadow-soft">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F5E6E] mb-4 sm:mb-6 text-shadow-soft">
                 Student Life at Rahi Homes
               </h2>
               <div
                 className="w-20 h-1 mb-6 sm:mb-8"
-                style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
+                style={{ background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)' }}
               />
             </motion.div>
 
@@ -81,50 +100,6 @@ export default function StudentLife() {
                 hostel truly special.
               </p>
             </motion.div>
-          </motion.div>
-
-          {/* Dual Image Collage Column */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="order-1 lg:order-2 relative h-[500px] sm:h-[600px] lg:h-[700px] w-full"
-          >
-            {/* Image 1: Main (larger, back) */}
-            <motion.div
-              whileHover={{ scale: 1.05, zIndex: 30 }}
-              transition={{ duration: 0.4 }}
-              className="absolute top-0 right-0 w-[80%] h-[70%] rounded-3xl overflow-hidden shadow-2xl z-10 border-4 border-white"
-            >
-              <Image
-                src="/images/students-images2.jpeg"
-                alt="Students Community at Rahi Homes 2"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 80vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-            </motion.div>
-
-            {/* Image 2: Secondary (smaller, front overlapping) */}
-            <motion.div
-              whileHover={{ scale: 1.05, zIndex: 30 }}
-              transition={{ duration: 0.4 }}
-              className="absolute bottom-10 left-0 w-[70%] h-[60%] rounded-3xl overflow-hidden shadow-2xl z-20 border-4 border-white"
-            >
-              <Image
-                src="/images/students-images.jpeg"
-                alt="Students Community at Rahi Homes"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 70vw, 30vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-            </motion.div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-xl -z-10 pointer-events-none" />
-            <div className="absolute -bottom-8 left-10 w-32 h-32 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-full blur-xl -z-10 pointer-events-none" />
           </motion.div>
         </div>
       </div>

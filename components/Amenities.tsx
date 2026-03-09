@@ -126,12 +126,12 @@ export default function Amenities() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="amenities" className="relative py-20 lg:py-32 bg-[#FFF5E6] overflow-hidden">
+    <section id="amenities" className="relative section-padding bg-[#EFE9D8] overflow-hidden">
       {/* Organic blob backgrounds */}
       <OrganicBlobs />
 
       {/* Curved divider at top */}
-      <CurvedDivider fromColor="#FFF5E6" toColor="#FFF5E6" flip />
+      <CurvedDivider fromColor="#EFE9D8" toColor="#EFE9D8" flip />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -147,7 +147,7 @@ export default function Amenities() {
               className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
+                  'radial-gradient(ellipse at center, rgba(15, 94, 110, 0.12) 0%, rgba(15, 94, 110, 0.06) 40%, transparent 70%)',
               }}
               animate={{
                 scale: [1, 1.4, 1],
@@ -163,12 +163,12 @@ export default function Amenities() {
               Everything You Need
             </p>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-shadow-soft">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#0F5E6E] mb-6 text-shadow-soft">
             World-Class Amenities
           </h2>
           <div
             className="w-20 h-1 mx-auto mb-6"
-            style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
+            style={{ background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)' }}
           />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need for comfortable, convenient, and secure living – all under one roof

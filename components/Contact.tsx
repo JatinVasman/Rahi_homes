@@ -109,7 +109,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 lg:py-32 bg-gradient-to-b from-[#FFEFD6] to-[#FFF5E6] relative overflow-hidden"
+      className="section-padding bg-gradient-to-b from-[#EFE9D8] to-[#F5F0E5] relative overflow-hidden"
     >
       <OrganicBlobs />
 
@@ -126,7 +126,7 @@ export default function Contact() {
               className="absolute inset-0 -inset-x-12 -inset-y-4 rounded-full pointer-events-none"
               style={{
                 background:
-                  'radial-gradient(ellipse at center, rgba(255, 60, 120, 0.18) 0%, rgba(255, 107, 43, 0.12) 40%, transparent 70%)',
+                  'radial-gradient(ellipse at center, rgba(15, 94, 110, 0.12) 0%, rgba(15, 94, 110, 0.06) 40%, transparent 70%)',
               }}
               animate={{
                 scale: [1, 1.4, 1],
@@ -142,12 +142,12 @@ export default function Contact() {
               We&apos;d Love to Hear From You
             </p>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-shadow-soft">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#0F5E6E] mb-6 text-shadow-soft">
             Get In Touch
           </h2>
           <div
             className="w-20 h-1 mx-auto mb-6"
-            style={{ background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800)' }}
+            style={{ background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #F04E1E)' }}
           />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll
@@ -297,7 +297,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="btn-ripple w-full text-white px-8 py-4 rounded-lg font-medium hover:opacity-90 transition-all shadow-lg flex items-center justify-center space-x-2 group"
-                style={{ background: 'linear-gradient(135deg, #FF3C78, #FF6B2B)' }}
+                style={{ background: '#F04E1E' }}
               >
                 <span>Send Message</span>
                 <motion.span

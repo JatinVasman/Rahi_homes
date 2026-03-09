@@ -1,13 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Phone, Mail, Instagram } from 'lucide-react'
+import { Phone, Mail, Instagram } from 'lucide-react'
 import Image from 'next/image'
-
-/* ═══════════════════════════════════════════════════
- * FOOTER — Enhanced with gradient, hover effects, and
- *          decorative elements
- * ═══════════════════════════════════════════════════ */
 
 export default function Footer() {
   const scrollToSection = (href: string) => {
@@ -18,15 +13,12 @@ export default function Footer() {
   }
 
   return (
-    <footer
-      className="relative text-white py-12 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #2D0A0A 0%, #1F0D15 50%, #120508 100%)' }}
-    >
-      {/* Subtle gradient accent at top */}
+    <footer className="relative text-white py-12 overflow-hidden" style={{ background: '#F04E1E' }}>
+      {/* Subtle teal accent at top */}
       <div
         className="absolute top-0 left-0 right-0 h-1"
         style={{
-          background: 'linear-gradient(90deg, #FF3C78, #FF6B2B, #FFB800, #D91656, #FF3C78)',
+          background: 'linear-gradient(90deg, #0F5E6E, #0F5E6E, #0F5E6E)',
         }}
       />
 
@@ -39,7 +31,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="mb-4">
+            <div className="mb-4 bg-white/95 rounded-lg inline-block p-2">
               <Image
                 src="/images/rahi_home_Logo.png"
                 alt="Rahi Homes Logo"
@@ -48,7 +40,7 @@ export default function Footer() {
                 className="h-16 w-auto object-contain"
               />
             </div>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-white/90 leading-relaxed">
               Premium girls hostel in Vile Parle, Mumbai. Where comfort meets community.
             </p>
           </motion.div>
@@ -60,13 +52,13 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               {['Home', 'About', 'Amenities', 'Colleges', 'Location', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(`#${item.toLowerCase()}`)}
-                    className="nav-link-hover text-gray-400 hover:text-primary transition-colors duration-300"
+                    className="text-white/80 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     {item}
                   </button>
@@ -75,39 +67,39 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info with Logo */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-gray-400">
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+            <ul className="space-y-3 text-white/85">
               <li>
                 <a
                   href="tel:+919821327143"
-                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-white transition-colors duration-300"
                 >
-                  <Phone className="w-4 h-4 text-primary/70 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-white/70 flex-shrink-0" />
                   +91 9821327143
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+918104071032"
-                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-white transition-colors duration-300"
                 >
-                  <Phone className="w-4 h-4 text-primary/70 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-white/70 flex-shrink-0" />
                   +91 8104071032
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:rahi.homes56@gmail.com"
-                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-white transition-colors duration-300"
                 >
-                  <Mail className="w-4 h-4 text-primary/70 flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-white/70 flex-shrink-0" />
                   rahi.homes56@gmail.com
                 </a>
               </li>
@@ -116,9 +108,9 @@ export default function Footer() {
                   href="https://instagram.com/rahi.homes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 hover:text-primary transition-colors duration-300"
+                  className="flex items-center gap-2.5 hover:text-white transition-colors duration-300"
                 >
-                  <Instagram className="w-4 h-4 text-primary/70 flex-shrink-0" />
+                  <Instagram className="w-4 h-4 text-white/70 flex-shrink-0" />
                   @Rahi.homes
                 </a>
               </li>
@@ -126,13 +118,12 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom Bar with gradient divider */}
-        <div className="pt-8 border-t border-gray-800 relative">
-          {/* Gradient glow on divider */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/20 relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-white/80 text-sm">
               © {new Date().getFullYear()} Rahi Homes. All rights reserved.
             </p>
           </div>
