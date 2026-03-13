@@ -4,6 +4,7 @@ import About from '@/components/About'
 import VideoTour from '@/components/VideoTour'
 import StudentLife from '@/components/StudentLife'
 import Gallery from '@/components/Gallery'
+import EventsHighlight from '@/components/EventsHighlight'
 import Amenities from '@/components/Amenities'
 import NearbyColleges from '@/components/NearbyColleges'
 import Location from '@/components/Location'
@@ -22,6 +23,7 @@ export default function Home() {
       <VideoTour />
       <StudentLife />
       <Gallery />
+      <EventsHighlight />
       <Amenities />
       <NearbyColleges />
       <Location />
