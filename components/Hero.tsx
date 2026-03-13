@@ -36,7 +36,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
           style={{
-            backgroundImage: `url('/images/Hallway.webp')`,
+            backgroundImage: `url('/images/HallWay.webp')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
