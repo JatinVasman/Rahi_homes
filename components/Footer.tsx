@@ -31,13 +31,13 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="mb-4 bg-white/95 rounded-lg inline-block p-2">
+            <div className="mb-4">
               <Image
                 src="/images/rahi_home_Logo.png"
                 alt="Rahi Homes Logo"
-                width={180}
-                height={75}
-                className="h-16 w-auto object-contain"
+                width={300}
+                height={120}
+                className="h-36 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-white/90 leading-relaxed">

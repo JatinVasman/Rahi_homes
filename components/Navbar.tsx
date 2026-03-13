@@ -70,7 +70,7 @@ export default function Navbar() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-32">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -82,22 +82,16 @@ export default function Navbar() {
               onClick={() => scrollToSection('#home')}
               className="flex items-center group transition-all duration-300"
             >
-              <div
-                className={`rounded-lg px-2.5 py-1.5 transition-all duration-400 ${
-                  isScrolled
-                    ? 'bg-transparent group-hover:bg-gray-50'
-                    : 'bg-white/95 shadow-lg shadow-black/10 group-hover:shadow-[#0F5E6E]/20 group-hover:shadow-xl'
+              <Image
+                src="/images/rahi_home_Logo.png"
+                alt="Rahi Homes Logo"
+                width={300}
+                height={120}
+                className={`h-36 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+                  isScrolled ? '' : 'brightness-0 invert'
                 }`}
-              >
-                <Image
-                  src="/images/rahi_home_Logo.png"
-                  alt="Rahi Homes Logo"
-                  width={150}
-                  height={60}
-                  className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  priority
-                />
-              </div>
+                priority
+              />
             </button>
           </motion.div>
 
