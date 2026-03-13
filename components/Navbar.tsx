@@ -39,8 +39,13 @@ export default function Navbar() {
   const scrollToSection = useCallback((href: string) => {
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      // Close mobile menu first, then scroll after layout settles
       setIsMobileMenuOpen(false)
+      setTimeout(() => {
+        const navbarOffset = 140
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY
+        window.scrollTo({ top: elementPosition - navbarOffset, behavior: 'smooth' })
+      }, 400) // Wait for mobile menu exit animation (350ms) to finish
     }
   }, [])
 
@@ -96,7 +101,7 @@ export default function Navbar() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => {
               const isActive = activeSection === item.href
               return (
@@ -178,7 +183,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileTap={{ scale: 0.9 }}
@@ -224,7 +229,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="md:hidden bg-white/95 backdrop-blur-2xl border-t border-[#0F5E6E]/10"
+            className="lg:hidden bg-white/95 backdrop-blur-2xl border-t border-[#0F5E6E]/10"
           >
             <div
               className="h-[1px] w-full"

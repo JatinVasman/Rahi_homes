@@ -32,6 +32,11 @@
   scroll-behavior: smooth;
 }
 
+/* Offset scroll targets for fixed navbar */
+section[id] {
+  scroll-margin-top: 140px;
+}
+
 html,
 body {
   overflow-x: hidden;
