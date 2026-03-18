@@ -86,8 +86,11 @@ export default function EventsHighlight() {
                   style={{ paddingBottom: '150%' }}
                 >
                   <video
-                    className="absolute inset-0 w-full h-full object-contain bg-black"
+                    className="absolute inset-0 w-full h-full object-contain bg-black video-no-volume"
+                    autoPlay
+                    loop
                     controls
+                    controlsList="nodownload"
                     preload="metadata"
                     playsInline
                     muted

@@ -521,3 +521,12 @@ h6 {
     text-wrap: balance;
   }
 }
+
+/* ═══════════════════════════════════════════════════
+ * VIDEO CONTROLS CUSTOMIZATION
+ * ═══════════════════════════════════════════════════ */
+.video-no-volume::-webkit-media-controls-volume-slider,
+.video-no-volume::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
