@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import Team from '@/components/Team'
 import VideoTour from '@/components/VideoTour'
 import StudentLife from '@/components/StudentLife'
 import Gallery from '@/components/Gallery'
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Team />
       <VideoTour />
       <StudentLife />
       <Gallery />
